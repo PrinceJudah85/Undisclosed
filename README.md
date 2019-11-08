@@ -5,7 +5,7 @@
 ## LoS FoUr AmIgOs 
 * Nehemias C.
 * Matthew C.
-* Rafael C. - El Embajador de la nacion de Git
+* Rafael C. - El Embajador de la nacion de Git (aka Git Daddy)
 * Raul J.
 
 ## Project Description
