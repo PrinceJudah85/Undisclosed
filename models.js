@@ -46,13 +46,16 @@ Comment.init({
 });
 
 
-//Associations[TBU]--for pending routes======
+
 User.hasMany(Blog, { onDelete: 'cascade' });
 Blog.belongsTo(User);
 
-// [TBU] Double check with instructors========
+
 Blog.hasMany(Comment, { onDelete: 'cascade' });
 Comment.belongsTo(Blog);
+
+User.hasMany(Comment, { onDelete: 'cascade' });
+Comment.belongsTo(User);
 
 module.exports = {
   Blog,

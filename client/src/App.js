@@ -41,7 +41,7 @@ class App extends React.Component {
         currentUser
       })
       this.props.history.push('/')
-      
+
     }
   }
 
@@ -55,7 +55,7 @@ class App extends React.Component {
   handleVerify = async () => {
     const currentUser = await verifyUser();
     if (currentUser) {
-      this.setState({currentUser})
+      this.setState({ currentUser })
     }
   }
 
@@ -68,20 +68,20 @@ class App extends React.Component {
       <div className="App" >
         <nav>
           <Link to="/posts">List of posts</Link>
-            {
-              this.state.currentUser ?
-                <div>
-                  <p>Hello, {this.state.currentUser.username}</p>
-                  <button onClick={this.handleLogout}>Logout</button>
-                </div> :
-                <Link to="/login"><button>Login/Register</button></Link>
-            }
+          {
+            this.state.currentUser ?
+              <div>
+                <p>Hello, {this.state.currentUser.username}</p>
+                <button onClick={this.handleLogout}>Logout</button>
+              </div> :
+              <Link to="/login"><button>Login/Register</button></Link>
+          }
         </nav>
-        <Route path="/login" render={() => (<LoginForm handleLogin={this.handleLogin} authErrorMessage={this.state.authErrorMessage}/>)} />
-        <Route path='/register' render={() => (<RegisterForm handleRegister={this.handleRegister} authErrorMessage={this.state.authErrorMessage}/>)} />
+        <Route path="/login" render={() => (<LoginForm handleLogin={this.handleLogin} authErrorMessage={this.state.authErrorMessage} />)} />
+        <Route path='/register' render={() => (<RegisterForm handleRegister={this.handleRegister} authErrorMessage={this.state.authErrorMessage} />)} />
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
