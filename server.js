@@ -4,19 +4,30 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 
+const userRouter = require('./routes/userRouter.js')
+const commentRouter = require('./routes/commentRouter.js')
+const blogRouter = require('./routes/blogRouter.js')
+const userBlogRouter = require('./routes/userBlogRouter.js')
+
 const app = express();
 
 app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-  res.json({ message: 'It is working' })
-})
+app.use('/users', userRouter);
+app.use('/blogs', blogRouter);
+app.use('/users/:user_id/blogs', userBlogRouter);
+app.use('/users/:user_id/blogs/:blog_id/comments', commentRouter);
 
-app.get('/ping', (req, res) => {
-  res.json({ ping: 'pong' })
-})
+
+// app.get('/', (req, res) => {
+//   res.json({ message: 'It is working' })
+// })
+
+// app.get('/ping', (req, res) => {
+//   res.json({ ping: 'pong' })
+// })
 
 
 
