@@ -1,0 +1,30 @@
+{
+  "name": "Undisclosed",
+  "version": "1.0.0",
+  "description": "### Group 4 (name pending)  * Raul J * Nehemias C * Matthew C * Rafael C",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrinceJudah85/Undisclosed.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PrinceJudah85/Undisclosed/issues"
+  },
+  "homepage": "https://github.com/PrinceJudah85/Undisclosed#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.4",
+    "pg": "^7.12.1",
+    "sequelize": "^5.21.2"
+  }
+}
