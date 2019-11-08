@@ -50,7 +50,6 @@ Comment.init({
 User.hasMany(Blog, { onDelete: 'cascade' });
 Blog.belongsTo(User);
 
-
 Blog.hasMany(Comment, { onDelete: 'cascade' });
 Comment.belongsTo(Blog);
 
