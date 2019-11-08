@@ -6,6 +6,43 @@
 * Matthew C
 * Rafael C
 
+
+
+
+## Component Tree
+* < Welcome />
+* < LogIn />
+* < Register />
+* < AllBlogs />
+* < SpecificBlog />
+* < Comment />
+* < PersonalProfile />
+  * < CreateForm />
+  * < EditForm />
+  * < PersonalBlogList />
+  * < PersonalBlogs />
+
+
+## ERM
+![Markdown Logo](https://i.imgur.com/pcjJhgN.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Headings -->
 # Heading 1
 ## Heading 2
