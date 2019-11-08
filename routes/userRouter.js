@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const { User } = require('../models');
-const { hashPassword, genToken, checkPassword } = require('../services/auth');
+const { hashPassword, genToken, checkPassword, restrict } = require('../services/auth');
 
 const userRouter = Router();
 

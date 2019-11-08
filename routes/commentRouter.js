@@ -22,14 +22,6 @@ commentRouter.route('/')
   })
 
 commentRouter.route('/:id')
-  .get(async (req, res, next) => {
-    try {
-      const comment = await Comment.findByPk(req.params.id);
-      res.json(comment);
-    } catch (e) {
-      next(e)
-    }
-  })
   .put(async (req, res, next) => {
     try {
       const comment = await Comment.findByPk(req.params.id);

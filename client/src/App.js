@@ -1,6 +1,9 @@
 import React from 'react';
-import axios from 'axios';
 import './App.css';
+import { Route, Link, withRouter } from 'react-router-dom';
+import { registerUser, loginUser, verifyUser } from './services/api-helper';
+import RegisterForm from './components/RegisterForm';
+import LoginForm from './components/LoginForm';
 
 class App extends React.Component {
   constructor() {

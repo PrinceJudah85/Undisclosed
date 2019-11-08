@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use('/users', userRouter);
 app.use('/blogs', blogRouter);
 app.use('/users/:user_id/blogs', userBlogRouter);
-app.use('/users/:user_id/blogs/:blog_id/comments', commentRouter);
+app.use('/blogs/:blog_id/comments', commentRouter);
 
 
 // app.get('/', (req, res) => {
