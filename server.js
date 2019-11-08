@@ -10,6 +10,14 @@ app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 
+app.get('/', (req, res) => {
+  res.json({ message: 'It is working' })
+})
+
+app.get('/ping', (req, res) => {
+  res.json({ ping: 'pong' })
+})
+
 
 
 app.listen(PORT, () => console.log(`up on port ${PORT}`))
