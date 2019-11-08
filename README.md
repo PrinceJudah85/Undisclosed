@@ -48,7 +48,7 @@ In the post-MVP lifecycle, we will do our best to include some of the following:
 
 
 ## Entity Relationship Diagram (ERD)
-![ERD](https://i.imgur.com/pcjJhgN.png)
+![ERD](https://i.imgur.com/GyGST3w.png)
 
 
 ## API Endpoint Documentations
