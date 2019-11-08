@@ -6,22 +6,76 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      message: ''
+      currentUser: null,
+      authErrorMessage: ''
     }
   }
 
-  async componentDidMount() {
-    const response = await axios.get('http://localhost:3000');
-    const message = response.data.message
+
+
+  handleLogin = async (loginData) => {
+    const currentUser = await loginUser(loginData);
+    if (currentUser.error) {
+      this.setState({
+        authErrorMessage: currentUser.error
+      })
+    }
+    else {
+      this.setState({ currentUser })
+      this.props.history.push('/')
+
+    }
+  }
+
+  handleRegister = async (registerData) => {
+    const currentUser = await registerUser(registerData)
+    if (currentUser.error) {
+      this.setState({
+        authErrorMessage: currentUser.error
+      })
+    } else {
+      this.setState({
+        currentUser
+      })
+      this.props.history.push('/')
+      
+    }
+  }
+
+  handleLogout = () => {
     this.setState({
-      message
+      currentUser: null
     })
+    localStorage.removeItem('authToken')
+  }
+
+  handleVerify = async () => {
+    const currentUser = await verifyUser();
+    if (currentUser) {
+      this.setState({currentUser})
+    }
+  }
+
+  componentDidMount() {
+    this.handleVerify();
   }
 
   render() {
     return (
       <div className="App" >
-        <h2>{this.state.message}</h2>
+        <nav>
+          <Link to="/posts">List of posts</Link>
+            {
+              this.state.currentUser ?
+                <div>
+                  <p>Hello, {this.state.currentUser.username}</p>
+                  <button onClick={this.handleLogout}>Logout</button>
+                </div> :
+                <Link to="/login"><button>Login/Register</button></Link>
+            }
+        </nav>
+        <Route path="/login" render={() => (<LoginForm handleLogin={this.handleLogin} authErrorMessage={this.state.authErrorMessage}/>)} />
+        <Route path='/register' render={() => (<RegisterForm handleRegister={this.handleRegister} authErrorMessage={this.state.authErrorMessage}/>)} />
       </div>
     );
   }
