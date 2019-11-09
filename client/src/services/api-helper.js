@@ -11,7 +11,6 @@ export const registerUser = async (registerData) => {
     const response = await api.post('/users/register', registerData)
     api.defaults.headers.common.authorization = `Bearer ${response.data.token}`
     localStorage.setItem('authToken', response.data.token)
-    debugger;
     return response.data.user
 
   } catch (e) {

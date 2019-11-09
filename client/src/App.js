@@ -26,7 +26,6 @@ class App extends React.Component {
     else {
       this.setState({ currentUser })
       this.props.history.push('/')
-
     }
   }
 
@@ -41,7 +40,6 @@ class App extends React.Component {
         currentUser
       })
       this.props.history.push('/')
-
     }
   }
 
@@ -67,7 +65,7 @@ class App extends React.Component {
     return (
       <div className="App" >
         <nav>
-          <Link to="/posts">List of posts</Link>
+          <Link to="/blogs">List of posts</Link>
           {
             this.state.currentUser ?
               <div>
