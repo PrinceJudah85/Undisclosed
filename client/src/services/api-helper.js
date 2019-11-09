@@ -4,7 +4,6 @@ const api = axios.create({
   baseURL: "http://localhost:3000"
 });
 
-
 // ============== Auth ================
 export const registerUser = async (registerData) => {
   try {
@@ -14,7 +13,7 @@ export const registerUser = async (registerData) => {
     return response.data.user
 
   } catch (e) {
-    return { error: "invalid credentials" }
+    return { error: "Invalid Credentials" }
   }
 }
 
@@ -26,7 +25,7 @@ export const loginUser = async (loginData) => {
     return response.data.user
 
   } catch (e) {
-    return { error: "invalid credentials" }
+    return { error: "Invalid Credentials" }
   }
 }
 
@@ -40,4 +39,56 @@ export const verifyUser = async () => {
   return false
 }
 
+// ============== Blogs ================
+export const getAllBlogs = async () => {
+  const response = await api.get('/blogs');
+  return response.data;
+}
 
+export const getOneBlog = async (blog_id) => {
+  const response = await api.get(`/blogs/${blog_id}`);
+  return response.data;
+}
+
+export const getAllUserBlogs = async (user_id) => {
+  const response = await api.get(`/users/${user_id}/blogs`);
+  return response.data;
+}
+
+export const postBlog = async (user_id, blogData) => {
+  const response = await api.post(`/users/${user_id}/blogs`, blogData);
+  return response.data;
+}
+
+export const putBlog = async (blog_id, blogData) => {
+  const response = await api.put(`/users/:user_id/blogs/${blog_id}`, blogData);
+  return response.data;
+}
+
+export const deleteBlog = async (blog_id) => {
+  const response = await api.delete(`/users/:user_id/blogs/${blog_id}`);
+  return response.data;
+}
+
+// ============== Comments ================
+
+export const getAllComments = async (blog_id) => {
+  const response = await api.get(`/blogs/${blog_id}/comments`);
+  return response.data;
+}
+
+// [TBU] - Remember: Do not forget to create comment form on front end to populate comment field
+export const postComment = async (blog_id, commentData) => {
+  const response = await api.post(`/blogs/${blog_id}/comments`, commentData);
+  return response.data;
+}
+
+export const putComment = async (comment_id, commentData) => {
+  const response = await api.put(`/blogs/:blog_id/comments/${comment_id}`, commentData);
+  return response.data
+}
+
+export const deleteComment = async (comment_id) => {
+  const response = await api.delete(`/blogs/:blog_id/comments/${comment_id}`);
+  return response.data
+}
