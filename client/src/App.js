@@ -72,6 +72,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App" >
+        <Welcome />
         <nav>
           <Link to="/blogs">List of posts</Link>
           {
