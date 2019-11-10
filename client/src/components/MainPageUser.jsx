@@ -11,29 +11,15 @@ export default function MainPageUser(props) {
       <button>Create</button>
       <button onClick={props.handleLogout}>Logout</button>
       {
-        
+        props.currentUserBlogs.map(each => (
+          <>
+            <img src={each.image_url}/>
+            <h2>{each.title}</h2>
+            <h3>{each.location}</h3>
+            <p>{each.content}</p>
+          </>  
+        ))
       }
     </div>
   )
 }
-
-  //import component into App.js
-
-  // < MainPageUser currentUser={this.state.currentUser} currentUserBlogs={this.allUserBlogs}/>
-  //render in app.js
-
-  //  if (this.state.currentUser) {
-  //       this.allUserBlogs(this.state.currentUser.id);
-  //  }
-
-  // allUserBlogs = async(id) => {
-  //   // const id = this.state.currentUser.id
-  //   const userBlogs = await getAllUserBlogs(id)
-  //   this.setState({
-  //     currentUserBlogs: userBlogs
-  //   })
-  // }
-
-  // import getAlluserBlogs into app.js
-
-  // ,currentUserBlogs: [] I put this in state to grab all of the users blogs

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import MainPageUser from './MainPageUser';
 
 export default class MainPage extends React.Component {
 
@@ -23,6 +24,7 @@ export default class MainPage extends React.Component {
               </div>
             ))
           }
+          < MainPageUser currentUser={this.props.currentUser} currentUserBlogs={this.props.currentUserBlogs}/>
         </div>
       </div>
     )
