@@ -25,7 +25,7 @@ userRouter.post('/register', async (req, res, next) => {
 
     const user = await User.create({
       username,
-      password_digest,
+      password_digest
     });
 
     const respData = buildAuthResponse(user);
