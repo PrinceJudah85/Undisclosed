@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { Route, Link, withRouter } from 'react-router-dom';
 import { registerUser, loginUser, verifyUser, getAllBlogs, getAllUserBlogs } from './services/api-helper';
+import Welcome from './components/Welcome';
 import RegisterForm from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
 import MainPage from './components/MainPage';
@@ -84,6 +85,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App" >
+          <Route exact path="/" render={() => (<Welcome />)} />
           <Link to="/blogs">List of posts</Link>
           {
             this.state.currentUser ?
