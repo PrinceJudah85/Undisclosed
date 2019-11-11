@@ -90,6 +90,7 @@ class App extends React.Component {
         <Link to="/blogs">List of posts</Link>
         {
           this.state.currentUser ?
+
             <Route path="/blogs" render={() => (<MainPage blogs={this.state.blogs} currentUser={this.state.currentUser} currentUserBlogs={this.state.currentUserBlogs} handleLogout={this.handleLogout} />)} /> :
             <Link to="/login"><button>Login/Register</button></Link>
         }

@@ -2,7 +2,8 @@
   margin: 0;
 }
 
-/* Welcome Page CSS */
+/*========================= Welcome Page =============================*/
+
 .welcome-main {
   background-color: #201F20;
   margin: 0 auto;
@@ -185,7 +186,7 @@
   }
 }
 
-/* Main Page CSS */
+/*========================== Main Page CSS =============================*/
 
 #main-div {
     display: grid;
