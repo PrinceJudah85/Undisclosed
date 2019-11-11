@@ -31,7 +31,7 @@ export const loginUser = async (loginData) => {
 
 export const verifyUser = async () => {
   const token = localStorage.authToken;
-  
+
   if (token) {
     api.defaults.headers.common.authorization = `Bearer ${token}`
     const response = await api.get('/users/verify')

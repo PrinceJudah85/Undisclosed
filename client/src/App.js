@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
 import { Route, Link, withRouter } from 'react-router-dom';
-import { registerUser, loginUser, verifyUser, getAllBlogs, getAllUserBlogs } from './services/api-helper';
+import { registerUser, loginUser, verifyUser, getAllBlogs, getAllUserBlogs, postBlog } from './services/api-helper';
 import Welcome from './components/Welcome';
 import Header from './components/Header';
 import RegisterForm from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
+import CreateBlog from './components/CreateBlog';
 import MainPage from './components/MainPage';
 import Footer from './components/Footer';
+import UserBlogs from './components/UserBlogs';
 
 class App extends React.Component {
   constructor() {
@@ -77,6 +79,17 @@ class App extends React.Component {
     })
   }
 
+  // =========== CREATE BLOG FUNCTION ============
+
+  createBlog = async (blogData) => {
+    const response = await postBlog(blogData);
+    const newBlog = response.data
+    this.setState(prevState => ({
+      blogs: [...prevState.blogs, newBlog]
+    }))
+    this.props.history.push('/blogs')
+  }
+
   async componentDidMount() {
     const currentUser = await this.handleVerify();
     this.readAllBlogs();
@@ -98,6 +111,7 @@ class App extends React.Component {
         <Footer />
         <Route path="/login" render={() => (<LoginForm handleLogin={this.handleLogin} authErrorMessage={this.state.authErrorMessage} />)} />
         <Route path='/register' render={() => (<RegisterForm handleRegister={this.handleRegister} authErrorMessage={this.state.authErrorMessage} />)} />
+        <Route path='/blogs/new' render={() => (<CreateBlog createBlog={this.createBlog} />)} />
       </div>
     );
   }
