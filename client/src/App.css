@@ -1,8 +1,6 @@
 .App {
   margin: 0;
-
-/* ============================ LOGIN FORM ============================ */
-
+}
 
 /* Welcome Page CSS */
 .welcome-main {
@@ -193,16 +191,16 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
-        "main main a"
-        "main main c"
-        "main main c";
+        "main main side"
+        "main main side"
+        "main main side";
 }
 
 #blog-list {
   grid-area: main;
   border: 5px solid #CCCCCC;
   box-sizing: border-box;
-  height: 300px;
+  height: 100vh;
   overflow: auto;
   width: 100%;
   padding: 5px 15px 5px 15px;
@@ -211,9 +209,38 @@
 
 .blogs {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 25% 75%;
+}
+
+.blog-image-container {
+  text-align: center;
+  padding: 10px
 }
 
 .blogs img {
-  max-width: 300px;
+  max-width: 90%;
+  border-radius: 60px;
+}
+
+.blogs h4 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.main-side {
+  grid-area: side;
+  border: 5px solid #CCCCCC;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow: auto;
+  width: 100%;
+  padding: 5px 15px 5px 15px;
+  position: relative;
+}
+
+.main-side img {
+  max-width: 30%;
+  border-radius: 35px;
 }
