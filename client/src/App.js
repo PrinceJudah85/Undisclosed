@@ -1,7 +1,11 @@
 import React from 'react';
 import './App.css';
 import { Route, Link, withRouter } from 'react-router-dom';
+<<<<<<< HEAD
 import { registerUser, loginUser, verifyUser, getAllBlogs, getAllUserBlogs, getOneBlog, postBlog } from './services/api-helper';
+=======
+import { registerUser, loginUser, verifyUser, getAllBlogs, getAllUserBlogs, postBlog } from './services/api-helper';
+>>>>>>> 76711954ed4977aeb1541ee896713349d8f0e5b6
 import Welcome from './components/Welcome';
 import Header from './components/Header';
 import RegisterForm from './components/RegisterForm';
@@ -10,7 +14,11 @@ import CreateBlog from './components/CreateBlog';
 import MainPage from './components/MainPage';
 import FullBlog from './components/FullBlog';
 import Footer from './components/Footer';
+<<<<<<< HEAD
 // import UserBlogs from './components/UserBlogs';     <---[TBU] need to create the route for this
+=======
+import UserBlogs from './components/UserBlogs';
+>>>>>>> 76711954ed4977aeb1541ee896713349d8f0e5b6
 
 class App extends React.Component {
   constructor() {
@@ -118,7 +126,10 @@ class App extends React.Component {
         <Footer />
         <Route path="/login" render={() => (<LoginForm handleLogin={this.handleLogin} authErrorMessage={this.state.authErrorMessage} />)} />
         <Route path='/register' render={() => (<RegisterForm handleRegister={this.handleRegister} authErrorMessage={this.state.authErrorMessage} />)} />
+<<<<<<< HEAD
         <Route path="/full_blog/:id" render={() => (<FullBlog oneBlog={this.state.oneBlog} />)} />
+=======
+>>>>>>> 76711954ed4977aeb1541ee896713349d8f0e5b6
         <Route path='/blogs/new' render={() => (<CreateBlog createBlog={this.createBlog} />)} />
       </div>
     );
