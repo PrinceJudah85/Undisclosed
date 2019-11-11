@@ -61,4 +61,11 @@ userRouter.get('/verify', restrict, (req, res, next) => {
   res.json(user);
 })
 
+//To get the Admins image and city
+userRouter.get('/', restrict, (req, res, next) => {
+  const userImage = req.params.image_url;
+  const userCity = req.params.city;
+  res.json( userImage, userCity );
+})
+
 module.exports = userRouter
