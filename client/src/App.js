@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
 import { Route, Link, withRouter } from 'react-router-dom';
-import { registerUser, loginUser, verifyUser, getAllBlogs, getAllUserBlogs } from './services/api-helper';
+import { registerUser, loginUser, verifyUser, getAllBlogs, getAllUserBlogs, postBlog } from './services/api-helper';
 import Welcome from './components/Welcome';
 import RegisterForm from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
+import CreateBlog from './components/CreateBlog';
 import MainPage from './components/MainPage';
 
 class App extends React.Component {
@@ -75,6 +76,17 @@ class App extends React.Component {
     })
   }
 
+  // =========== CREATE BLOG FUNCTION ============
+
+  createBlog = async (blogData) => {
+    const response = await postBlog(blogData);
+    const newBlog = response.data
+    this.setState(prevState => ({
+      blogs: [...prevState.blogs, newBlog]
+    }))
+    this.props.history.push('/blogs')
+  }
+
   async componentDidMount() {
     const currentUser = await this.handleVerify();
     this.readAllBlogs();
@@ -91,11 +103,12 @@ class App extends React.Component {
         {
           this.state.currentUser ?
 
-            <Route path="/blogs" render={() => (<MainPage blogs={this.state.blogs} currentUser={this.state.currentUser} currentUserBlogs={this.state.currentUserBlogs} handleLogout={this.handleLogout} />)} /> :
+            <Route exact path="/blogs" render={() => (<MainPage blogs={this.state.blogs} currentUser={this.state.currentUser} currentUserBlogs={this.state.currentUserBlogs} handleLogout={this.handleLogout} />)} /> :
             <Link to="/login"><button>Login/Register</button></Link>
         }
         <Route path="/login" render={() => (<LoginForm handleLogin={this.handleLogin} authErrorMessage={this.state.authErrorMessage} />)} />
         <Route path='/register' render={() => (<RegisterForm handleRegister={this.handleRegister} authErrorMessage={this.state.authErrorMessage} />)} />
+        <Route path='/blogs/new' render={() => (<CreateBlog createBlog={this.createBlog} />)} />
       </div>
     );
   }
