@@ -3,9 +3,11 @@ import './App.css';
 import { Route, Link, withRouter } from 'react-router-dom';
 import { registerUser, loginUser, verifyUser, getAllBlogs, getAllUserBlogs } from './services/api-helper';
 import Welcome from './components/Welcome';
+import Header from './components/Header';
 import RegisterForm from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
 import MainPage from './components/MainPage';
+import Footer from './components/Footer';
 
 class App extends React.Component {
   constructor() {
@@ -43,7 +45,7 @@ class App extends React.Component {
       this.setState({
         currentUser
       })
-      this.props.history.push('/')
+      this.props.history.push('/blogs')
     }
   }
 
@@ -87,12 +89,13 @@ class App extends React.Component {
     return (
       <div className="App" >
         <Route exact path="/" render={() => (<Welcome />)} />
-        <Link to="/blogs">List of posts</Link>
+        <Header />
         {
           this.state.currentUser ?
-            <Route path="/blogs" render={() => (<MainPage blogs={this.state.blogs} currentUser={this.state.currentUser} currentUserBlogs={this.state.currentUserBlogs} handleLogout={this.handleLogout} />)} /> :
+            <Route exact path="/blogs" render={() => (<MainPage blogs={this.state.blogs} currentUser={this.state.currentUser} currentUserBlogs={this.state.currentUserBlogs} handleLogout={this.handleLogout} />)} /> :
             <Link to="/login"><button>Login/Register</button></Link>
         }
+        <Footer />
         <Route path="/login" render={() => (<LoginForm handleLogin={this.handleLogin} authErrorMessage={this.state.authErrorMessage} />)} />
         <Route path='/register' render={() => (<RegisterForm handleRegister={this.handleRegister} authErrorMessage={this.state.authErrorMessage} />)} />
       </div>

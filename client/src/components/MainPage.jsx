@@ -15,7 +15,7 @@ export default class MainPage extends React.Component {
                   <img src={blog.image_url} alt="blog-post" />
                 </div>
                 <div>
-                  {/* Author displays currentUser and not creator */}
+                  {/* [TBU] Author displays currentUser and not creator */}
                   <h2>Author: {this.props.currentUser.username}</h2>
                   <h4>{blog.content}</h4>
                   <Link to={`/blogs/${this.props.blog_id}`}>
