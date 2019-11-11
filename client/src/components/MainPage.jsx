@@ -16,7 +16,7 @@ export default class MainPage extends React.Component {
                 </div>
                 <div>
                   <h2>Author: {this.props.currentUser.username}</h2>
-                  <h4>Content: {blog.content}</h4>
+                  <h4>Content: {blog.content}</h4> 
                   <Link to={`/blogs/${this.props.blog_id}`}>
                     <button onClick={() => this.props.handleClick(blog.id)}>...read more!</button>
                   </Link>
@@ -24,7 +24,7 @@ export default class MainPage extends React.Component {
               </div>
             ))
           }
-          < MainPageUser currentUser={this.props.currentUser} currentUserBlogs={this.props.currentUserBlogs}/>
+          < MainPageUser currentUser={this.props.currentUser} currentUserBlogs={this.props.currentUserBlogs} />
         </div>
       </div>
     )

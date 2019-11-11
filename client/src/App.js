@@ -67,7 +67,7 @@ class App extends React.Component {
     this.setState({ blogs })
   }
 
-  allUserBlogs = async(id) => {
+  allUserBlogs = async (id) => {
     const userBlogs = await getAllUserBlogs(id)
     this.setState({
       currentUserBlogs: userBlogs
@@ -75,7 +75,7 @@ class App extends React.Component {
   }
 
   async componentDidMount() {
-    const currentUser =  await this.handleVerify();
+    const currentUser = await this.handleVerify();
     this.readAllBlogs();
     if (currentUser) {
       this.allUserBlogs(currentUser.id);
@@ -85,13 +85,13 @@ class App extends React.Component {
   render() {
     return (
       <div className="App" >
-          <Route exact path="/" render={() => (<Welcome />)} />
-          <Link to="/blogs">List of posts</Link>
-          {
-            this.state.currentUser ?
-              <Route path="/blogs" render={() => (<MainPage blogs={this.state.blogs} currentUser={this.state.currentUser} currentUserBlogs={this.state.currentUserBlogs}/>)} /> :
-              <Link to="/login"><button>Login/Register</button></Link>
-          }
+        <Route exact path="/" render={() => (<Welcome />)} />
+        <Link to="/blogs">List of posts</Link>
+        {
+          this.state.currentUser ?
+            <Route path="/blogs" render={() => (<MainPage blogs={this.state.blogs} currentUser={this.state.currentUser} currentUserBlogs={this.state.currentUserBlogs} />)} /> :
+            <Link to="/login"><button>Login/Register</button></Link>
+        }
         <Route path="/login" render={() => (<LoginForm handleLogin={this.handleLogin} authErrorMessage={this.state.authErrorMessage} />)} />
         <Route path='/register' render={() => (<RegisterForm handleRegister={this.handleRegister} authErrorMessage={this.state.authErrorMessage} />)} />
       </div>
