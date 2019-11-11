@@ -1,9 +1,8 @@
-.App {
+body {
   margin: 0;
 }
 
-/*========================= Welcome Page =============================*/
-
+/* =============== Welcome Page ===================== */
 .welcome-main {
   background-color: #201F20;
   margin: 0 auto;
@@ -186,7 +185,7 @@
   }
 }
 
-/*========================== Main Page CSS =============================*/
+/* ================= Main Page ==================== */
 
 #main-div {
     display: grid;
@@ -199,9 +198,8 @@
 
 #blog-list {
   grid-area: main;
-  border: 5px solid #CCCCCC;
   box-sizing: border-box;
-  height: 100vh;
+  height: 80vh;
   overflow: auto;
   width: 100%;
   padding: 5px 15px 5px 15px;
@@ -232,19 +230,98 @@
 
 .main-side {
   grid-area: side;
-  border: 5px solid #CCCCCC;
+  border-left: 3px solid black;
+  border-right: 3px solide black;
   box-sizing: border-box;
-  height: 100vh;
+  height: 80vh;
   overflow: auto;
   width: 100%;
-  padding: 5px 15px 5px 15px;
   position: relative;
 }
 
 .main-side img {
-  max-width: 30%;
-  border-radius: 35px;
+  max-width: 75%;
+  border-radius: 70px;
 }
+
+.main-side-top {
+  text-align: center;
+}
+
+.main-side-top button {
+  margin: 10px 10px;
+  font-size: 2em;
+  font-weight: bold;
+  width: 250px;
+  height: 50px;
+  background: whitesmoke;
+  border: 2px solid black;
+  border-radius: 10px;
+  transition: background-color 250ms linear;
+  }
+
+  .main-side-top button:hover {
+    background: black;
+    color: whitesmoke;
+  }
+
+  .sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    margin-bottom: 35px;
+  }
+
+  .black {
+    background-color: black;
+  }
+
+  .black h1 {
+    color: white;
+    margin-top: 0;
+  }
+  
+  .main-user-blogs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .main-user-blogs img {
+    justify-self: center;
+    margin: 10px 0;
+  }
+
+  .main-user-blog-heading {
+    align-self: center;
+  }
+
+  /* ================= Header / Footer ==================== */
+  .header {
+    background-color: black;
+    color: whitesmoke;
+    font-size: 2em;
+    height: 10vh;
+    line-height: 10vh;
+    margin: 0;
+    border-bottom: 1.2px solid black;
+    padding: 0;
+    text-align: center;
+  }
+
+  .header a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .footer {
+    width: 100%;
+    height: 10vh;
+    background-color: black;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 /*========================== Form CSS =============================*/
 
