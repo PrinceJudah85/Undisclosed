@@ -7,6 +7,7 @@ import RegisterForm from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
 import CreateBlog from './components/CreateBlog';
 import MainPage from './components/MainPage';
+import UserBlogs from './components/UserBlogs';
 
 class App extends React.Component {
   constructor() {
