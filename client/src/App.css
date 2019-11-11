@@ -245,3 +245,62 @@
   max-width: 30%;
   border-radius: 35px;
 }
+
+/*========================== Form CSS =============================*/
+
+.login, .register {
+  text-align: center;
+  display: grid;
+  width: 40%;
+  margin: 0 auto;  
+}
+
+input[type=text] {
+  margin-bottom: 15px;
+  line-height: 50px;
+  border-radius: 10px;
+  background-color: #CEC6C1;
+  border: none;
+  transition: background-color 1s;
+}
+
+input::placeholder{
+  font-size: 30px;
+  text-align: center;
+}
+
+input[type=text]:hover {
+  background-color: white;
+}
+
+.login button {
+  width: 50%;
+  margin: 0 auto;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 40px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #CEC6C1;
+  transition: background-color 1s;
+}
+
+.login button:hover {
+  background-color: rgb(226, 216, 216);
+} 
+
+.register button {
+  width: 50%;
+  margin: 0 auto;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 40px;
+  border: 1px solid purple;
+  border-radius: 5px;
+  background-color: rgb(194, 143, 143);
+  transition: background-color 1s;
+}
+
+.register button:hover {
+  background-color: rgb(214, 174, 174);
+}
