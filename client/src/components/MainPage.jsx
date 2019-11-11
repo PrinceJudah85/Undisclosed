@@ -11,12 +11,13 @@ export default class MainPage extends React.Component {
           {
             this.props.blogs.map(blog => (
               <div className="blogs" key={blog.id}>
-                <div>
+                <div className="blog-image-container">
                   <img src={blog.image_url} alt="blog-post" />
                 </div>
                 <div>
+                  {/* Author displays currentUser and not creator */}
                   <h2>Author: {this.props.currentUser.username}</h2>
-                  <h4>Content: {blog.content}</h4>
+                  <h4>{blog.content}</h4>
                   <Link to={`/blogs/${this.props.blog_id}`}>
                     <button onClick={() => this.props.handleClick(blog.id)}>...read more!</button>
                   </Link>
@@ -24,8 +25,8 @@ export default class MainPage extends React.Component {
               </div>
             ))
           }
-          < MainPageUser handleLogout={this.props.handleLogout} currentUser={this.props.currentUser} currentUserBlogs={this.props.currentUserBlogs}/>
         </div>
+        < MainPageUser handleLogout={this.props.handleLogout} currentUser={this.props.currentUser} currentUserBlogs={this.props.currentUserBlogs} />
       </div>
     )
   }
