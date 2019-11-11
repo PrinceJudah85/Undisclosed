@@ -18,8 +18,8 @@ export default class MainPage extends React.Component {
                   {/* [TBU] Author displays currentUser and not creator */}
                   <h2>Author: {this.props.currentUser.username}</h2>
                   <h4>{blog.content}</h4>
-                  <Link to={`/blogs/${this.props.blog_id}`}>
-                    <button onClick={() => this.props.handleClick(blog.id)}>...read more!</button>
+                  <Link to={`/full_blog/${blog.id}`}>
+                    <button id={blog.id} onClick={this.props.handleClick}>...read more!</button>
                   </Link>
                 </div>
               </div>
