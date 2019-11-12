@@ -20,7 +20,7 @@ class App extends React.Component {
       authErrorMessage: '',
       blogs: [],
       currentUserBlogs: [],
-      oneBlog: {}
+      oneBlog: {},
     }
   }
 
@@ -54,7 +54,7 @@ class App extends React.Component {
       this.setState({
         currentUser
       })
-      this.props.history.push('/blogs')
+      this.props.history.push('/login')
     }
   }
 
@@ -88,8 +88,8 @@ class App extends React.Component {
 
   // =========== CREATE BLOG FUNCTION ============
 
-  createBlog = async (blogData) => {
-    const response = await postBlog(blogData);
+  createBlog = async (user_id, blogData) => {
+    const response = await postBlog(user_id, blogData);
     const newBlog = response.data
     this.setState(prevState => ({
       blogs: [...prevState.blogs, newBlog]
@@ -99,7 +99,7 @@ class App extends React.Component {
 
   async componentDidMount() {
     const currentUser = await this.handleVerify();
-    this.readAllBlogs();
+    await this.readAllBlogs();
     if (currentUser) {
       this.allUserBlogs(currentUser.id);
     }
@@ -111,15 +111,15 @@ class App extends React.Component {
         <Route exact path="/" render={() => (<Welcome />)} />
         <Header />
         {
-          this.state.currentUser ?
+          this.state.currentUser && this.state.blogs ?
             <Route exact path="/blogs" render={() => (<MainPage oneBlog={this.state.oneBlog} handleClick={this.handleClick} blogs={this.state.blogs} currentUser={this.state.currentUser} currentUserBlogs={this.state.currentUserBlogs} handleLogout={this.handleLogout} />)} /> :
             <Link to="/login"><button>Login/Register</button></Link>
         }
         <Footer />
         <Route path="/login" render={() => (<LoginForm handleLogin={this.handleLogin} authErrorMessage={this.state.authErrorMessage} />)} />
         <Route path='/register' render={() => (<RegisterForm handleRegister={this.handleRegister} authErrorMessage={this.state.authErrorMessage} />)} />
-        <Route path="/full_blog/:id" render={() => (<FullBlog oneBlog={this.state.oneBlog} />)} />
-        <Route path='/blogs/new' render={() => (<CreateBlog createBlog={this.createBlog} />)} />
+        <Route path="/full_blog/:id" render={() => (<FullBlog oneBlog={this.state.oneBlog} currentUserBlogs={this.state.currentUserBlogs} />)} />
+        <Route path='/blogs/new' render={() => (<CreateBlog currentUser={this.state.currentUser} createBlog={this.createBlog} />)} />
       </div>
     );
   }

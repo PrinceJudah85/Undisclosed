@@ -7,7 +7,7 @@ const { restrict } = require('../services/auth')
 blogRouter.route('/')
   .get(async (req, res, next) => {
     try {
-      const blogs = await Blog.findAll();
+      const blogs = await Blog.findAll({include: 'user'}); // UPDATED
       res.json(blogs);
     } catch (e) {
       next(e)

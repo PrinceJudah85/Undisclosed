@@ -18,6 +18,8 @@ const buildAuthResponse = (user) => {
   };
 };
 
+//set up route to get all users; return users
+
 userRouter.post('/register', async (req, res, next) => {
   try {
     const password_digest = await hashPassword(req.body.password);
@@ -27,7 +29,7 @@ userRouter.post('/register', async (req, res, next) => {
       username,
       password_digest
     });
-
+    //[TBU] user.save().then(() => {})
     const respData = buildAuthResponse(user);
 
     res.json(respData);
