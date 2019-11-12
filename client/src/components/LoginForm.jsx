@@ -7,14 +7,14 @@ export default class LoginForm extends Component {
     password: ''
   }
 
-  handleChange = (e) => {
-    const { name, value } = e.target;
+  handleChange = (event) => {
+    const { name, value } = event.target;
     this.setState({ [name]: value })
   }
 
   render() {
     return (
-      <form className="login" onSubmit={(e) => {
+      <form className="login-form" onSubmit={(e) => {
         e.preventDefault()
         this.props.handleLogin(this.state)
       }}>
@@ -35,8 +35,10 @@ export default class LoginForm extends Component {
           value={this.state.password}
           onChange={this.handleChange}
         />
-        <Link to='/blogs'><button>Login</button></Link>
-        <Link to='/register'>register</Link>
+        <button id="submit">Submit</button>
+        <button id="register-link">
+          <Link to='/register'>¡Register!</Link>
+        </button>
       </form>
     )
   }
