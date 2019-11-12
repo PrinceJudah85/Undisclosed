@@ -296,6 +296,16 @@ body {
   }
 
   /* ================= Header / Footer ==================== */
+
+  .full-blog-div {
+    text-align: center;
+  }
+
+  .full-blog-div img {
+    width: 50%;
+  }
+
+  /* ================= Header / Footer ==================== */
   .header {
     background-color: black;
     color: whitesmoke;

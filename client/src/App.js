@@ -117,7 +117,7 @@ class App extends React.Component {
         }
         <Route path="/login" render={() => (<LoginForm handleLogin={this.handleLogin} authErrorMessage={this.state.authErrorMessage} />)} />
         <Route path='/register' render={() => (<RegisterForm handleRegister={this.handleRegister} authErrorMessage={this.state.authErrorMessage} />)} />
-        <Route path="/full_blog/:id" render={() => (<FullBlog oneBlog={this.state.oneBlog} currentUserBlogs={this.state.currentUserBlogs} />)} />
+        <Route path="/full_blog/:id" render={() => (<FullBlog blogs={this.state.blogs} oneBlog={this.state.oneBlog} currentUserBlogs={this.state.currentUserBlogs} />)} />
         <Route path='/blogs/new' render={() => (<CreateBlog currentUser={this.state.currentUser} createBlog={this.createBlog} />)} />
         <Route path="/user_blogs/:id" render={() => (<UserBlogs allUserBlogs={this.allUserBlogs} oneBlog={this.state.oneBlog} handleClick={this.handleClick}/>)}/>
         <Footer />

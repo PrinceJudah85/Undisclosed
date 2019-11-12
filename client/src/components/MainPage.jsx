@@ -9,23 +9,22 @@ export default class MainPage extends React.Component {
       <div id="main-div">
         <div id="blog-list">
           {
-            this.props.blogs.map(blog => (
-              <div className="blogs" key={blog.id}>
-                <div className="blog-image-container">
-                  <img src={blog.image_url} alt="blog-post" />
+            this.props.blogs && 
+              this.props.blogs.map(blog => (
+                <div className="blogs" key={blog.id}>
+                  <div className="blog-image-container">
+                    <img src={blog.image_url} alt="blog-post" />
+                  </div>
+                  <div>
+                    <h2>Created by: {blog.user.username}</h2>
+                    <h4>{blog.content}</h4>
+                    <Link to={`/full_blog/${blog.id}`}>
+                      <button id={blog.id} onClick={this.props.handleClick}>...read more!</button>
+                    </Link>
+                  </div>
                 </div>
-                <div>
-                  <h2>Created by: {blog.user.username}</h2>
-                  <h4>{blog.content}</h4>
-                  
-                  <Link to={`/full_blog/${blog.id}`}>
-                    <button id={blog.id} onClick={this.props.handleClick}>...read more!</button>
-                  </Link>
-                  
-                </div>
-              </div>
-            ))
-          }
+              ))
+            }
         </div>
         {
           this.props.currentUser &&
