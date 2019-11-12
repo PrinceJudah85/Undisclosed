@@ -1,7 +1,7 @@
 const { Router } = require('express');
-const userBlogRouter = Router({mergeParams: true});
-const { Blog } = require('../models.js');
-const { restrict } = require('../services/auth');
+const userBlogRouter = Router({ mergeParams: true });
+const { Blog, User } = require('../models.js')
+const { restrict } = require('../services/auth')
 
 userBlogRouter.route('/')
   .get(async (req, res, next) => {
@@ -9,14 +9,15 @@ userBlogRouter.route('/')
       const user_id = req.params.user_id
       const blogs = await Blog.findAll({
         where: {
-        user_id
-      }});
+          user_id
+        }
+      });
       res.json(blogs);
     } catch (e) {
       next(e)
     }
   })
-  
+
   .post(restrict, async (req, res, next) => {
     try {
       const user_id = req.params.user_id

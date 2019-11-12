@@ -2,18 +2,23 @@ import React from 'react';
 
 export default class CreateBlog extends React.Component {
   state = {
-    title: '',
-    image_url: '',
-    content: '',
-    location: ''
-    // "additional_images:" input field is part of Post MVP. Figure out how to implement this field in the form. Will have to make changes to the back end as well. 
+    blogData: {
+      title: '',
+      image_url: '',
+      content: '',
+      location: ''
+      // "additional_images:" input field is part of Post MVP. Figure out how to implement this field in the form. Will have to make changes to the back end as well.
+    }
   }
 
-  handleChange = (event) => {
+  handlePostChange = (event) => {
     const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    })
+    this.setState(prevstate => ({
+      blogData: {
+        ...prevstate.blogData,
+        [name]: value
+      }
+    }))
   }
 
   render() {
@@ -21,7 +26,7 @@ export default class CreateBlog extends React.Component {
       <div className='create-blog'>
         <form onSubmit={(event) => {
           event.preventDefault();
-          this.props.createBlog(this.state)
+          this.props.createBlog(this.props.currentUser.id, this.state.blogData)
         }}>
           <label htmlFor="title">Title</label>
           <input
@@ -29,7 +34,7 @@ export default class CreateBlog extends React.Component {
             name="title"
             id="title"
             value={this.state.title}
-            onChange={this.handleChange}
+            onChange={this.handlePostChange}
           />
           <br />
           <label htmlFor="image_url">Image URL</label>
@@ -38,7 +43,7 @@ export default class CreateBlog extends React.Component {
             name="image_url"
             id="image_url"
             value={this.state.image_url}
-            onChange={this.handleChange}
+            onChange={this.handlePostChange}
           />
           <br />
           <label htmlFor="content">Content</label>
@@ -47,7 +52,7 @@ export default class CreateBlog extends React.Component {
             name="content"
             id="content"
             value={this.state.content}
-            onChange={this.handleChange}
+            onChange={this.handlePostChange}
           />
           <br />
           <label htmlFor="location">Location</label>
@@ -56,7 +61,7 @@ export default class CreateBlog extends React.Component {
             name="location"
             id="location"
             value={this.state.location}
-            onChange={this.handleChange}
+            onChange={this.handlePostChange}
           />
           <br />
           <button>Submit Blog</button>
@@ -64,4 +69,4 @@ export default class CreateBlog extends React.Component {
       </div>
     )
   }
-} 
+}

@@ -5,6 +5,7 @@ import MainPageUser from './MainPageUser';
 export default class MainPage extends React.Component {
 
   render() {
+    console.log(this.props.blogs)
     return (
       <div id="main-div">
         <div id="blog-list">
@@ -15,8 +16,7 @@ export default class MainPage extends React.Component {
                   <img src={blog.image_url} alt="blog-post" />
                 </div>
                 <div>
-                  {/* [TBU] Author displays currentUser and not creator */}
-                  <h2>Author: {this.props.currentUser.username}</h2>
+                  <h2>Created by: {blog.user.username}</h2>
                   <h4>{blog.content}</h4>
                   
                   <Link to={`/full_blog/${blog.id}`}>
@@ -28,10 +28,13 @@ export default class MainPage extends React.Component {
             ))
           }
         </div>
-        { this.props.currentUser &&
+        {
+          this.props.currentUser &&
           < MainPageUser handleLogout={this.props.handleLogout} currentUser={this.props.currentUser} currentUserBlogs={this.props.currentUserBlogs} />
         }
       </div>
     )
   }
 }
+
+//{this.props.urrentUser.id === blog.user.id ? delete button} allows you to conditionally render admin id. Or on User.init table, add another columns, isAdmin: true

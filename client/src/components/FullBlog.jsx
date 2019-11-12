@@ -17,3 +17,5 @@ export default function FullBlog(props) {
     </>
   )
 }
+
+// [TBU] On refresh, page loses all information. Need to correct this.
