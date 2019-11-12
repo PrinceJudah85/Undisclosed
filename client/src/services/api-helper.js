@@ -46,6 +46,11 @@ export const getAllBlogs = async () => {
   return response.data;
 }
 
+export const getAllUsers = async () => {
+  const response = await api.get('/users');
+  return response.data;
+}
+
 export const getOneBlog = async (blog_id) => {
   const response = await api.get(`/blogs/${blog_id}`);
   return response.data;
