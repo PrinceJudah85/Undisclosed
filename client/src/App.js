@@ -9,6 +9,7 @@ import LoginForm from './components/LoginForm';
 import CreateBlog from './components/CreateBlog';
 import MainPage from './components/MainPage';
 import FullBlog from './components/FullBlog';
+import UserBlogs from './components/UserBlogs';
 import Footer from './components/Footer';
 // import UserBlogs from './components/UserBlogs';     <---[TBU] need to create the route for this
 
@@ -28,7 +29,6 @@ class App extends React.Component {
     const id = parseInt(e.target.id);
     const oneBlog = await getOneBlog(id)
     this.setState({ oneBlog })
-    console.log(this.state.oneBlog)
   }
 
   handleLogin = async (loginData) => {
@@ -118,8 +118,12 @@ class App extends React.Component {
         <Footer />
         <Route path="/login" render={() => (<LoginForm handleLogin={this.handleLogin} authErrorMessage={this.state.authErrorMessage} />)} />
         <Route path='/register' render={() => (<RegisterForm handleRegister={this.handleRegister} authErrorMessage={this.state.authErrorMessage} />)} />
-        <Route path="/full_blog/:id" render={() => (<FullBlog oneBlog={this.state.oneBlog} />)} />
+        { this.state.oneBlog &&
+          <Route path="/full_blog/:id" render={(props) => (<FullBlog oneBlog={this.state.oneBlog} />)} />
+        }
         <Route path='/blogs/new' render={() => (<CreateBlog createBlog={this.createBlog} />)} />
+
+        <Route path="/user_blogs/:id" render={() => (<UserBlogs allUserBlogs={this.allUserBlogs} oneBlog={this.state.oneBlog} handleClick={this.handleClick}/>)}/>
       </div>
     );
   }
