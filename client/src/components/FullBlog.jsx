@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 export default function FullBlog(props) {
   return (
-    <div id={props.oneBlog.id}>
+    <div className="full-blog-div" id={props.oneBlog.id}>
       <h2>{props.oneBlog.title}</h2>
       <img src={props.oneBlog.image_url} alt="blog location" />
-      <h3>Author:<Link to={'/blogs'}>{props.oneBlog.userId}</Link></h3>
+      {/* <h3>Author:<Link to={'/blogs'}>{props.blogs.user.username}</Link></h3> */}
       <h3>{props.oneBlog.location}</h3>
       <p>{props.oneBlog.content}</p>
     </div>
