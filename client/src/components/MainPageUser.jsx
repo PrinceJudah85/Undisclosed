@@ -14,7 +14,7 @@ export default function MainPageUser(props) {
           <button>Favorites</button>
         </div>
         <div className="sticky black">
-          <Link to="/blogs/new">
+          <Link to={`/blogs/${props.currentUser.id}/new`}>
             <button>Create</button>
           </Link>
         </div>
