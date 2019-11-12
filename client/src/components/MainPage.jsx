@@ -5,7 +5,6 @@ import MainPageUser from './MainPageUser';
 export default class MainPage extends React.Component {
 
   render() {
-    console.log(this.props.blogs)
     return (
       <div id="main-div">
         <div id="blog-list">

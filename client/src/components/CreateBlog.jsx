@@ -11,7 +11,7 @@ export default class CreateBlog extends React.Component {
     }
   }
 
-  handlePostChange = (event) => {
+  handleChange = (event) => {
     const { name, value } = event.target;
     this.setState(prevstate => ({
       blogData: {
@@ -34,7 +34,7 @@ export default class CreateBlog extends React.Component {
             name="title"
             id="title"
             value={this.state.title}
-            onChange={this.handlePostChange}
+            onChange={this.handleChange}
           />
           <br />
           <label htmlFor="image_url">Image URL</label>
@@ -43,7 +43,7 @@ export default class CreateBlog extends React.Component {
             name="image_url"
             id="image_url"
             value={this.state.image_url}
-            onChange={this.handlePostChange}
+            onChange={this.handleChange}
           />
           <br />
           <label htmlFor="content">Content</label>
@@ -52,7 +52,7 @@ export default class CreateBlog extends React.Component {
             name="content"
             id="content"
             value={this.state.content}
-            onChange={this.handlePostChange}
+            onChange={this.handleChange}
           />
           <br />
           <label htmlFor="location">Location</label>
@@ -61,7 +61,7 @@ export default class CreateBlog extends React.Component {
             name="location"
             id="location"
             value={this.state.location}
-            onChange={this.handlePostChange}
+            onChange={this.handleChange}
           />
           <br />
           <button>Submit Blog</button>
