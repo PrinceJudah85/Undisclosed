@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const userBlogRouter = Router({mergeParams: true});
-const { Blog } = require('../models.js')
-const { restrict } = require('../services/auth')
+const { Blog } = require('../models.js');
+const { restrict } = require('../services/auth');
 
 userBlogRouter.route('/')
   .get(async (req, res, next) => {
@@ -21,7 +21,7 @@ userBlogRouter.route('/')
     try {
       const user_id = req.params.user_id
       const data = req.body
-      const user = await User.findAll(user_id)
+      const user = await User.findByPk(user_id)
       const blog = await Blog.create(data)
       await blog.setUser(user)
       res.json(blog);

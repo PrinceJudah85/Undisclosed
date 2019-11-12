@@ -11,7 +11,15 @@ export default class CreateBlog extends React.Component {
     }
   }
 
-  handleChange = (event) => {
+  //store prev state of blogs w/ component did mount?
+  async componentDidMount() {
+    const blogs = this.props.blogs
+    this.setState({
+      blogs
+    })
+  }
+
+  handlePostChange = (event) => {
     const { name, value } = event.target;
     this.setState(prevstate => ({
       blogData: {
@@ -26,7 +34,7 @@ export default class CreateBlog extends React.Component {
       <div className='create-blog'>
         <form onSubmit={(event) => {
           event.preventDefault();
-          this.props.createBlog(this.props.id, this.state.blogData)
+          this.props.createBlog(this.state.blogData)
         }}>
           <label htmlFor="title">Title</label>
           <input
@@ -34,7 +42,7 @@ export default class CreateBlog extends React.Component {
             name="title"
             id="title"
             value={this.state.title}
-            onChange={this.handleChange}
+            onChange={this.handlePostChange}
           />
           <br />
           <label htmlFor="image_url">Image URL</label>
@@ -43,7 +51,7 @@ export default class CreateBlog extends React.Component {
             name="image_url"
             id="image_url"
             value={this.state.image_url}
-            onChange={this.handleChange}
+            onChange={this.handlePostChange}
           />
           <br />
           <label htmlFor="content">Content</label>
@@ -52,7 +60,7 @@ export default class CreateBlog extends React.Component {
             name="content"
             id="content"
             value={this.state.content}
-            onChange={this.handleChange}
+            onChange={this.handlePostChange}
           />
           <br />
           <label htmlFor="location">Location</label>
@@ -61,10 +69,10 @@ export default class CreateBlog extends React.Component {
             name="location"
             id="location"
             value={this.state.location}
-            onChange={this.handleChange}
+            onChange={this.handlePostChange}
           />
           <br />
-          <button>Submit Blog</button>
+          <button>Submit</button>
         </form>
       </div>
     )

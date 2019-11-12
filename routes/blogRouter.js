@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const blogRouter = Router();
-const { Blog } = require('../models.js')
+const { User,Blog } = require('../models.js')
 const { restrict } = require('../services/auth')
 
 //======SHOWS ALL BLOGS==========

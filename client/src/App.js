@@ -88,9 +88,9 @@ class App extends React.Component {
 
   // =========== CREATE BLOG FUNCTION ============
 
-  createBlog = async (blogData) => {
-    const response = await postBlog(blogData);
-    const newBlog = response.data
+  createBlog = async (id, blogData) => {
+    const response = await postBlog(id, blogData);
+    const newBlog = response
     this.setState(prevState => ({
       blogs: [...prevState.blogs, newBlog]
     }))
@@ -115,11 +115,12 @@ class App extends React.Component {
             <Route exact path="/blogs" render={() => (<MainPage oneBlog={this.state.oneBlog} handleClick={this.handleClick} blogs={this.state.blogs} currentUser={this.state.currentUser} currentUserBlogs={this.state.currentUserBlogs} handleLogout={this.handleLogout} />)} /> :
             <Link to="/login"><button>Login/Register</button></Link>
         }
-        <Footer />
+
         <Route path="/login" render={() => (<LoginForm handleLogin={this.handleLogin} authErrorMessage={this.state.authErrorMessage} />)} />
         <Route path='/register' render={() => (<RegisterForm handleRegister={this.handleRegister} authErrorMessage={this.state.authErrorMessage} />)} />
         <Route path="/full_blog/:id" render={() => (<FullBlog oneBlog={this.state.oneBlog} />)} />
-        <Route path='/blogs/new' render={() => (<CreateBlog createBlog={this.createBlog} />)} />
+        <Route path='/blogs/:id/new' render={(props) => (<CreateBlog id={props.match.params.id} createBlog={this.createBlog} />)} />
+        {/* <Footer /> */}
       </div>
     );
   }

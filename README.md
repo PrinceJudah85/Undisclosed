@@ -69,8 +69,8 @@ In the post-MVP lifecycle, we will do our best to include some of the following:
 * < SpecificBlog />
 * < Comment />
 * < PersonalProfile />
-  * < CreateForm />
-  * < EditForm />
+  * < CreateBlog />
+  * < EditBlog />
   * < PersonalBlogList />
   * < PersonalBlogs />
 
