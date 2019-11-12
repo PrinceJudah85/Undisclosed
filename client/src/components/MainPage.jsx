@@ -18,11 +18,9 @@ export default class MainPage extends React.Component {
                 <div>
                   <h2>Created by: {blog.user.username}</h2>
                   <h4>{blog.content}</h4>
-                  
                   <Link to={`/full_blog/${blog.id}`}>
                     <button id={blog.id} onClick={this.props.handleClick}>...read more!</button>
                   </Link>
-                  
                 </div>
               </div>
             ))
