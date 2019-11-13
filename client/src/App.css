@@ -2,7 +2,8 @@ body {
   margin: 0;
 }
 
-/* =============== Welcome Page ===================== */
+/* ====================== [Welcome Page] ======================= */\
+
 .welcome-main {
   background-color: #201F20;
   margin: 0 auto;
@@ -185,7 +186,7 @@ body {
   }
 }
 
-/* ================= Main Page ==================== */
+/* ======================= [Main Page] ========================= */
 
 #main-div {
     display: grid;
@@ -318,7 +319,7 @@ body {
     align-self: center;
   }
 
-  /* ================= Header / Footer ==================== */
+  /* ======================= [Header / Footer] ======================== */
 
   .full-blog-div {
     text-align: center;
@@ -328,7 +329,7 @@ body {
     width: 50%;
   }
 
-  /* ================= Header / Footer ==================== */
+  /* ================= [Header / Footer] ==================== */
   .header {
     background-image: url(http://blkhack.com/wp-content/uploads/2016/11/tumblr_static_tumblr1.jpg);
     background-size: contain;
@@ -357,7 +358,7 @@ body {
     justify-content: center;
   }
 
-/*========================== Form CSS =============================*/
+/*============================ [Form CSS] ===============================*/
 /* [TBU] Update If Desired */
 
 /* Login part */
@@ -484,7 +485,7 @@ body {
   outline: none;
 }
 
-/*========================== [Create Blog Form] =============================*/
+/*=========================== [Create Blog Form] =============================*/
 #create-form-title{
   margin:1.7em;
   font-size:2em;
@@ -576,7 +577,7 @@ body {
   display: none;
 }
 
-/*========================== [Edit Blog form ============================*/
+/*==========================[Edit Blog form]============================*/
 
 #edit-form-title{
   margin:1.7em;
@@ -667,4 +668,13 @@ body {
 
 .edit-label {
   display: none;
+}
+
+/*============================[Full Blog Page]=============================*/
+
+.full-blog {
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  
 }
