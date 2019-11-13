@@ -7,13 +7,13 @@ const { restrict } = require('../services/auth')
 blogRouter.route('/')
   .get(async (req, res, next) => {
     try {
-      const blogs = await Blog.findAll({include: 'user'}); // UPDATED
+      const blogs = await Blog.findAll({ include: 'user' }); // UPDATED
       res.json(blogs);
     } catch (e) {
       next(e)
     }
   })
-  
+
   .post(restrict, async (req, res, next) => {
     try {
       const blog = await Blog.create({ ...req.body, userId: res.locals.user.id });

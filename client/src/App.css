@@ -189,17 +189,17 @@ body {
 
 #main-div {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 65% 35%;
     grid-template-areas:
-        "main main side"
-        "main main side"
-        "main main side";
+        "main side"
+        "main side"
+        "main side";
 }
 
 #blog-list {
   grid-area: main;
   box-sizing: border-box;
-  height: 80vh;
+  height: 75vh;
   overflow: auto;
   width: 100%;
   padding: 5px 15px 5px 15px;
@@ -208,7 +208,26 @@ body {
 
 .blogs {
   display: grid;
-  grid-template-columns: 25% 75%;
+  grid-template-columns: 40% 55%;
+  margin-top: 15px;
+}
+
+#blog-list h1 {
+  text-align: center;
+}
+
+.blogs button{
+  font-size: 1em;
+  font-weight: bold;
+  background: whitesmoke;
+  border: 2px solid black;
+  border-radius: 10px;
+  transition: background-color 250ms linear;
+}
+
+.blogs button:hover {
+  background: black;
+  color: whitesmoke;
 }
 
 .blog-image-container {
@@ -221,27 +240,27 @@ body {
   border-radius: 60px;
 }
 
-.blogs h4 {
+/* .blogs h4 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
-}
+} */
 
 .main-side {
   grid-area: side;
-  border-left: 3px solid black;
-  border-right: 3px solide black;
+  border-left: 3px solid #201E1F;
+  border-right: 3px solid #201E1F;
   box-sizing: border-box;
-  height: 80vh;
+  height: 75vh;
   overflow: auto;
   width: 100%;
   position: relative;
 }
 
 .main-side img {
-  max-width: 75%;
-  border-radius: 70px;
+  max-width: 80%;
+  border-radius: 50px;
 }
 
 .main-side-top {
@@ -270,20 +289,24 @@ body {
     position: sticky;
     top: -1px;
     margin-bottom: 35px;
+    background-color: white;
   }
 
-  .black {
-    background-color: black;
-  }
+  /* .black {
+    background-color: #201E1F;
+  } */
 
   .black h1 {
-    color: white;
-    margin-top: 0;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 10px;
   }
   
   .main-user-blogs {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    background-color: #201E1F;
+    color: white;
   }
 
   .main-user-blogs img {
@@ -307,11 +330,12 @@ body {
 
   /* ================= Header / Footer ==================== */
   .header {
-    background-color: black;
-    color: whitesmoke;
+    background-image: url(http://blkhack.com/wp-content/uploads/2016/11/tumblr_static_tumblr1.jpg);
+    background-size: contain;
+    background-repeat: initial;
     font-size: 2em;
-    height: 10vh;
-    line-height: 10vh;
+    height: 15vh;
+    line-height: 7.5vh;
     margin: 0;
     border-bottom: 1.2px solid black;
     padding: 0;
@@ -320,7 +344,7 @@ body {
 
   .header a {
     text-decoration: none;
-    color: white;
+    color: #201E1F;
   }
 
   .footer {

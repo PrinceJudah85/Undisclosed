@@ -18,7 +18,6 @@ const buildAuthResponse = (user) => {
   };
 };
 
-//set up route to get all users; return users
 
 userRouter.post('/register', async (req, res, next) => {
   try {
@@ -29,7 +28,7 @@ userRouter.post('/register', async (req, res, next) => {
       username,
       password_digest
     });
-    //[TBU] user.save().then(() => {})
+
     const respData = buildAuthResponse(user);
 
     res.json(respData);
