@@ -23,48 +23,52 @@ export default class EditBlog extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={(event) => {
+      <div className='edit-blog'>
+        <h2 id='edit-form-title'>Edit Blog</h2>
+        <form id='edit-form' onSubmit={(event) => {
           event.preventDefault();
           this.props.handleEdit(this.props.id, this.state.blogData, this.props.currentUser.id)
         }}>
-          <label htmlFor="title">Title</label>
-          <input
+          <label className='edit-label' htmlFor="title">Title</label>
+          <input className='edit-field'
             type="text"
             name="title"
             id="title"
+            placeholder="Title"
             value={this.state.blogData.title}
             onChange={this.handleChange}
           />
-          <br />
-          <label htmlFor="image_url">Image URL</label>
-          <input
+          <label className='edit-label' htmlFor="image_url">Image URL</label>
+          <input className='edit-field'
             type="text"
             name="image_url"
             id="image_url"
+            placeholder="Image URL"
             value={this.state.blogData.image_url}
             onChange={this.handleChange}
           />
-          <br />
-          <label htmlFor="content">Content</label>
-          <input
-            type="text"
-            name="content"
-            id="content"
-            value={this.state.blogData.content}
-            onChange={this.handleChange}
-          />
-          <br />
-          <label htmlFor="location">Location</label>
-          <input
+          <label className='edit-label' htmlFor="location">Location</label>
+          <input className='edit-field'
             type="text"
             name="location"
             id="location"
+            placeholder="Location"
             value={this.state.blogData.location}
             onChange={this.handleChange}
           />
           <br />
-          <button>Edit Blog</button>
+          <label className='edit-label' htmlFor="content">Content</label>
+          <textarea
+            name="content"
+            id="edit-content"
+            row='12'
+            resize='true'
+            placeholder='Content'
+            value={this.state.blogData.content}
+            onChange={this.handleChange}
+          />
+          <br />
+          <button id='edit-blog-button'>Edit Blog</button>
         </form>
       </div>
     )

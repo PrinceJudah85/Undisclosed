@@ -42,8 +42,8 @@ export default class FullBlog extends React.Component {
         {
           this.state.oneBlog &&
           <div id={this.state.oneBlog.id}>
-            <h2>{this.state.oneBlog.title}</h2>
-            <img src={this.state.oneBlog.image_url} alt="blog location" />
+            <h2 className="blog-title">{this.state.oneBlog.title}</h2>
+            <img className="full-blog-img" src={this.state.oneBlog.image_url} alt="blog location" />
             <h3>Author:<Link to={`/user_blogs/${this.state.oneBlog.userId}`}>{this.state.oneBlog.user.username}</Link></h3>
             <h3>{this.state.oneBlog.location}</h3>
             <p>{this.state.oneBlog.content}</p>
@@ -52,7 +52,6 @@ export default class FullBlog extends React.Component {
             {this.state.oneBlog.userId === this.props.currentUser.id ? <button id={this.state.oneBlog.id} onClick={this.props.handleDelete}>Delete</button> : null}
             {this.state.oneBlog.userId === this.props.currentUser.id ? <Link to={`/edit/${this.state.oneBlog.id}`}><button id={this.state.oneBlog.id}>Edit</button></Link> : null}
           </div>
-
         }
       </>
     )
