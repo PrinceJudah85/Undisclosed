@@ -484,4 +484,187 @@ body {
   outline: none;
 }
 
-/*========================== [Next Part CSS] =============================*/
+/*========================== [Create Blog Form] =============================*/
+#create-form-title{
+  margin:1.7em;
+  font-size:2em;
+}
+
+.create-blog {
+  min-height:90vh;
+  padding:1.2em;
+  text-align:center;
+}
+
+#create-form {
+  display:grid;
+  width:35%;
+  margin:0px auto;
+  margin-top:3em;
+}
+
+.create-field {
+  font-size:1em;
+  background-color:black;
+  border: 2px solid #CEC6C1;
+  border-radius: .4em;
+  margin-bottom: 15px;
+  line-height: 30px;
+  opacity: .7;
+  outline:none;
+}
+
+.create-field:hover{
+  background-color:white;
+  opacity: .9;
+  transition: opacity, background-color .7s;
+  border: 2px black solid;
+}
+.create-field::placeholder{
+  color:white;
+}
+
+.create-field::placeholder:hover{
+  color:black;
+}
+
+#content {
+  border: 2px solid black;
+  font-size:1em;
+  margin-bottom: 1em;
+  height: 20vh;
+  border-radius: 5px;
+  background-color: black;
+  opacity:.7;
+  outline:none;
+}
+
+#content:hover{
+  background-color:white;
+  opacity:.9;
+  transition: opacity, background-color .7s;
+  border: 2px solid black;
+}
+
+#content::placeholder{
+  color:white;
+}
+
+#create-blog-button {
+  background-color: black;
+  margin:0 auto;
+  width:25%;
+  font-size: 1em;
+  border: 2px solid black;
+  font-weight:800;
+  line-height: 40px;
+  border-radius: .4em;
+  opacity:.7;
+  color:white;
+  width:30%;
+  letter-spacing:1px;
+}
+
+#create-blog-button:hover{
+  background-color:white;
+  opacity:.9;
+  transition: opacity, background-color .7s;
+  color:black;
+}
+
+.create-label {
+  display: none;
+}
+
+/*========================== [Edit Blog form ============================*/
+
+#edit-form-title{
+  margin:1.7em;
+  font-size:2em;
+}
+
+.edit-blog {
+  min-height:90vh;
+  padding:1.2em;
+  text-align:center;
+}
+
+#edit-form {
+  display:grid;
+  width:35%;
+  margin:0px auto;
+  margin-top:3em;
+}
+
+.edit-field {
+  font-size:1em;
+  background-color:black;
+  border: 2px solid #CEC6C1;
+  border-radius: .4em;
+  margin-bottom: 15px;
+  line-height: 30px;
+  opacity: .7;
+  outline:none;
+}
+
+.edit-field:hover{
+  background-color:white;
+  opacity: .9;
+  transition: opacity, background-color .7s;
+  border: 2px black solid;
+}
+.edit-field::placeholder{
+  color:white;
+}
+
+.edit-field::placeholder:hover{
+  color:black;
+}
+
+#edit-content {
+  border: 2px solid black;
+  font-size:1em;
+  margin-bottom: 1em;
+  height: 20vh;
+  border-radius: 5px;
+  background-color: black;
+  opacity:.7;
+  outline:none;
+}
+
+#edit-content:hover{
+  background-color:white;
+  opacity:.9;
+  transition: opacity, background-color .7s;
+  border: 2px solid black;
+}
+
+#edit-content::placeholder{
+  color:white;
+}
+
+#edit-blog-button {
+  background-color: black;
+  margin:0 auto;
+  width:25%;
+  font-size: 1em;
+  border: 2px solid black;
+  font-weight:800;
+  line-height: 40px;
+  border-radius: .4em;
+  opacity:.7;
+  color:white;
+  width:30%;
+  letter-spacing:1px;
+}
+
+#edit-blog-button:hover{
+  background-color:white;
+  opacity:.9;
+  transition: opacity, background-color .7s;
+  color:black;
+}
+
+.edit-label {
+  display: none;
+}
