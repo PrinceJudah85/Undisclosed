@@ -26,14 +26,14 @@ export default class EditBlog extends React.Component {
       <div>
         <form onSubmit={(event) => {
           event.preventDefault();
-          this.props.handleEdit(this.props.id, this.state.blogData)
+          this.props.handleEdit(this.props.id, this.state.blogData, this.props.currentUser.id)
         }}>
           <label htmlFor="title">Title</label>
           <input
             type="text"
             name="title"
             id="title"
-            value={this.state.title}
+            value={this.state.blogData.title}
             onChange={this.handleChange}
           />
           <br />
@@ -42,7 +42,7 @@ export default class EditBlog extends React.Component {
             type="text"
             name="image_url"
             id="image_url"
-            value={this.state.image_url}
+            value={this.state.blogData.image_url}
             onChange={this.handleChange}
           />
           <br />
@@ -51,7 +51,7 @@ export default class EditBlog extends React.Component {
             type="text"
             name="content"
             id="content"
-            value={this.state.content}
+            value={this.state.blogData.content}
             onChange={this.handleChange}
           />
           <br />
@@ -60,7 +60,7 @@ export default class EditBlog extends React.Component {
             type="text"
             name="location"
             id="location"
-            value={this.state.location}
+            value={this.state.blogData.location}
             onChange={this.handleChange}
           />
           <br />
