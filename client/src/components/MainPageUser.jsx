@@ -22,7 +22,7 @@ export default function MainPageUser(props) {
           props.currentUserBlogs.map(blog => (
             <div className="main-user-blogs" key={blog.id}>
               <Link to={`/full_blog/${blog.id}`} >
-                <img src={blog.image_url} alt="blog post" id={blog.id} onClick={props.handleClick} />
+                <img src={blog.image_url} alt="blog post" id={blog.id}/>
               </Link>
               <div className="main-user-blog-heading">
                 <h2>{blog.title}</h2>

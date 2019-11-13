@@ -4,8 +4,7 @@ import { getAllUserBlogs } from '../services/api-helper';
 
 export default class UserBlogs extends React.Component {
   state = {
-    currentUserBlogs: [],
-    oneBlog: {}
+    currentUserBlogs: []
   }
 
   allUserBlogs = async (id) => {
@@ -16,7 +15,7 @@ export default class UserBlogs extends React.Component {
   }
 
   componentDidMount = async () => {
-    this.allUserBlogs(this.props.oneBlog.userId);
+    this.allUserBlogs(this.props.id);
   }
 
   render() {
@@ -29,10 +28,10 @@ export default class UserBlogs extends React.Component {
                 <img src={blog.image_url} alt="blog-post" />
               </div>
               <div>
-                <h2>Author: {blog.username}</h2>
+                <h2>Author: {blog.user.username}</h2>
                 <h4>{blog.content}</h4>
                 <Link to={`/full_blog/${blog.id}`}>
-                  <button onClick={this.props.handleClick}>...read more!</button>
+                  <button>...read more!</button>
                 </Link>
               </div>
             </div>

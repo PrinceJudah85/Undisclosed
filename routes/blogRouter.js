@@ -26,7 +26,12 @@ blogRouter.route('/')
 blogRouter.route('/:id')
   .get(async (req, res, next) => {
     try {
-      const blog = await Blog.findByPk(req.params.id);
+      const blog = await Blog.findOne({
+        where: {
+          id: req.params.id
+        },
+        include: 'user'
+      });
       res.json(blog);
     } catch (e) {
       next(e)

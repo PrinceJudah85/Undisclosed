@@ -10,7 +10,8 @@ userBlogRouter.route('/')
       const blogs = await Blog.findAll({
         where: {
           user_id
-        }
+        },
+        include: 'user'
       });
       res.json(blogs);
     } catch (e) {
@@ -54,7 +55,13 @@ userBlogRouter.route('/:id')
       const data = req.body;
       const blog = await Blog.findByPk(id);
       await blog.update(data)
-      res.json(blog)
+      const updatedBlog = await Blog.findOne({
+        where: {
+          id: blog.id
+        },
+        include: 'user'
+      })
+      res.json(updatedBlog)
     } catch (e) {
       next(e)
     }
