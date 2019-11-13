@@ -12,7 +12,7 @@ export default class RegisterForm extends React.Component {
   }
   render() {
     return (
-      <form className="register" onSubmit={(event) => {
+      <form className="register-form" onSubmit={(event) => {
         event.preventDefault()
         this.props.handleRegister(this.state)
         this.setState({
@@ -20,7 +20,7 @@ export default class RegisterForm extends React.Component {
           password: ''
         })
       }}>
-        <h2>Register</h2>
+        <h2>Register for a new account</h2>
         <label htmlFor="username">Username</label>
         <input
           name="username"
