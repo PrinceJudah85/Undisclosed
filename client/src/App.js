@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
 import { Route, Link, withRouter } from 'react-router-dom';
-import { registerUser, loginUser, verifyUser, getAllBlogs, getAllUserBlogs, getOneBlog, postBlog } from './services/api-helper';
+import { registerUser, loginUser, verifyUser, getAllBlogs, getAllUserBlogs, getOneBlog, postBlog, deleteBlog, putBlog } from './services/api-helper';
 import Welcome from './components/Welcome';
 import Header from './components/Header';
 import RegisterForm from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
 import CreateBlog from './components/CreateBlog';
+import EditBlog from './components/EditBlog'
 import MainPage from './components/MainPage';
 import FullBlog from './components/FullBlog';
 import UserBlogs from './components/UserBlogs';
@@ -105,6 +106,25 @@ class App extends React.Component {
     }
   }
 
+  handleDelete = async (e) => {
+    const id = e.target.id
+    const blog = await deleteBlog(id)
+    this.setState(prevState => ({
+      blogs: [...prevState.blogs.filter(blog => { return blog.id !== parseInt(id) })]
+    }))
+    this.props.history.push('/blogs')
+  }
+
+  handleEdit = async (id, formData) => {
+    // e.preventDefault();
+    // const id = parseInt(e.target.id);
+    const newBlog = await putBlog(id, formData);
+    this.setState(prevState => ({
+      blogs: [...prevState.blogs.map(blog => blog.id === newBlog.id ? newBlog : blog)]
+    }))
+    this.props.history.push('/blogs')
+  }
+
   render() {
     return (
       <div className="App" >
@@ -117,9 +137,10 @@ class App extends React.Component {
         }
         <Route path="/login" render={() => (<LoginForm handleLogin={this.handleLogin} authErrorMessage={this.state.authErrorMessage} />)} />
         <Route path='/register' render={() => (<RegisterForm handleRegister={this.handleRegister} authErrorMessage={this.state.authErrorMessage} />)} />
-        <Route path="/full_blog/:id" render={() => (<FullBlog blogs={this.state.blogs} oneBlog={this.state.oneBlog} currentUserBlogs={this.state.currentUserBlogs} />)} />
+        <Route path="/full_blog/:id" render={(props) => (<FullBlog id={props.match.params.id} blogs={this.state.blogs} oneBlog={this.state.oneBlog} currentUserBlogs={this.state.currentUserBlogs} currentUser={this.state.currentUser} handleDelete={this.handleDelete}/>)} />
         <Route path='/blogs/new' render={() => (<CreateBlog currentUser={this.state.currentUser} createBlog={this.createBlog} />)} />
-        <Route path="/user_blogs/:id" render={() => (<UserBlogs allUserBlogs={this.allUserBlogs} oneBlog={this.state.oneBlog} handleClick={this.handleClick}/>)}/>
+        <Route path="/user_blogs/:id" render={() => (<UserBlogs allUserBlogs={this.allUserBlogs} oneBlog={this.state.oneBlog} handleClick={this.handleClick} />)} />
+        <Route path="/edit/:id" render={(props) => (<EditBlog id={props.match.params.id} handleChange={this.handleChange} handleEdit={this.handleEdit}/>)}/>
         <Footer />
       </div>
     );
