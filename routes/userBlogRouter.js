@@ -25,7 +25,13 @@ userBlogRouter.route('/')
       const user = await User.findByPk(user_id)
       const blog = await Blog.create(data)
       await blog.setUser(user)
-      res.json(blog);
+      const newBlog = await Blog.findOne({
+        where: {
+          id: blog.id
+        },
+        include: 'user'
+      })
+      res.json(newBlog);
     } catch (e) {
       next(e)
     }
@@ -41,6 +47,7 @@ userBlogRouter.route('/:id')
       next(e)
     }
   })
+
   .put(async (req, res, next) => {
     try {
       const id = req.params.id;
@@ -52,6 +59,7 @@ userBlogRouter.route('/:id')
       next(e)
     }
   })
+
   .delete(async (req, res, next) => {
     try {
       const id = req.params.id;
