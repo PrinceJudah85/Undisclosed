@@ -20,7 +20,6 @@ export const registerUser = async (registerData) => {
 export const loginUser = async (loginData) => {
   try {
     const response = await api.post('/users/login', loginData)
-    console.log(response)
     api.defaults.headers.common.authorization = `Bearer ${response.data.token}`
     localStorage.setItem('authToken', response.data.token)
     return response.data.user
@@ -67,8 +66,8 @@ export const postBlog = async (user_id, blogData) => {
   return response.data;
 }
 
-export const putBlog = async (blog_id, blogData) => {
-  const response = await api.put(`/users/:user_id/blogs/${blog_id}`, blogData);
+export const putBlog = async (blog_id, blogData, userId) => {
+  const response = await api.put(`/users/${userId}/blogs/${blog_id}`, blogData);
   return response.data;
 }
 
@@ -84,7 +83,6 @@ export const getAllComments = async (blog_id) => {
   return response.data;
 }
 
-// [TBU] - Remember: Do not forget to create comment form on front end to populate comment field
 export const postComment = async (blog_id, commentData) => {
   const response = await api.post(`/blogs/${blog_id}/comments`, commentData);
   return response.data;

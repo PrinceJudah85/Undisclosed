@@ -27,7 +27,7 @@ export default class EditBlog extends React.Component {
         <h2 id='edit-form-title'>Edit Blog</h2>
         <form id='edit-form' onSubmit={(event) => {
           event.preventDefault();
-          this.props.handleEdit(this.props.id, this.state.blogData)
+          this.props.handleEdit(this.props.id, this.state.blogData, this.props.currentUser.id)
         }}>
           <label className='edit-label' htmlFor="title">Title</label>
           <input className='edit-field'
@@ -35,7 +35,7 @@ export default class EditBlog extends React.Component {
             name="title"
             id="title"
             placeholder="Title"
-            value={this.state.title}
+            value={this.state.blogData.title}
             onChange={this.handleChange}
           />
           <label className='edit-label' htmlFor="image_url">Image URL</label>
@@ -44,7 +44,7 @@ export default class EditBlog extends React.Component {
             name="image_url"
             id="image_url"
             placeholder="Image URL"
-            value={this.state.image_url}
+            value={this.state.blogData.image_url}
             onChange={this.handleChange}
           />
           <label className='edit-label' htmlFor="location">Location</label>
@@ -53,9 +53,10 @@ export default class EditBlog extends React.Component {
             name="location"
             id="location"
             placeholder="Location"
-            value={this.state.location}
+            value={this.state.blogData.location}
             onChange={this.handleChange}
           />
+          <br />
           <label className='edit-label' htmlFor="content">Content</label>
           <textarea
             name="content"
@@ -63,7 +64,7 @@ export default class EditBlog extends React.Component {
             row='12'
             resize='true'
             placeholder='Content'
-            value={this.state.content}
+            value={this.state.blogData.content}
             onChange={this.handleChange}
           />
           <br />
