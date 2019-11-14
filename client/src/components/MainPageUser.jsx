@@ -9,12 +9,12 @@ export default function MainPageUser(props) {
         <div className="main-side-top-buttons">
           <h1>{props.currentUser.username}</h1>
           <div id="user-image">
-            {props.currentUser.image_url === null ? <img src='https://i.imgur.com/HZPz2tu.png' alt="default user image" /> : <img src={props.currentUser.image_url} />}
+            {props.currentUser.image_url === null ? <img src='https://i.imgur.com/HZPz2tu.png' alt="default user profile" /> : <img src={props.currentUser.image_url} alt="current user profile" />}
           </div>
           <h3>Representing {props.currentUser.city}</h3>
-            <Link to={`/update_profile/${props.currentUser.id}`}>
-              <button className="small-button">Edit Profile</button>
-            </Link>
+          <Link to={`/update_profile/${props.currentUser.id}`}>
+            <button className="small-button">Edit Profile</button>
+          </Link>
           <button onClick={props.handleLogout} className="small-button">Logout</button>
           <button>Following</button>
           <button>Favorites</button>
@@ -26,6 +26,7 @@ export default function MainPageUser(props) {
         </div>
         <h1 className="black">My recent posts</h1>
         {
+          props.currentUserBlogs &&
           props.currentUserBlogs.map(blog => (
             <div className="main-user-blogs" key={blog.id}>
               <Link to={`/full_blog/${blog.id}`} >
