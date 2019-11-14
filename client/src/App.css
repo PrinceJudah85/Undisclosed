@@ -12,7 +12,7 @@ button {
 
 /* =============== Welcome Page ===================== */
 .welcome-main {
-  background-color: #201F20;
+  background-color: #ffffff;
   margin: 0 auto;
 }
 
@@ -206,6 +206,7 @@ button {
 .blogs img {
   max-width: 90%;
   border-radius: 60px;
+  box-shadow: 4px 4px;
 }
 
 /* .blogs h4 {
@@ -372,7 +373,11 @@ button {
   transition: background-color 1s, transform 1s ease-in-out;
 }
 
-#submit:hover, #register-link:hover {
+#register-link a{
+  text-decoration:none;
+  color: #1F1E1E;
+}
+#submit:hover, #register-link:hover{
   background-color: rgb(216, 147, 147);
   cursor: pointer;
   animation: shake 0.8s;
@@ -641,8 +646,76 @@ button {
 
 /*============================[Full Blog Page]=============================*/
 
-.full-blog {
+.full-blog-page {
   display:flex;
   flex-direction: column;
   justify-content:center;
+  margin:0 10% 0 10%;
 }
+
+.blog-title {
+  text-align:center;
+  font-size:2em;
+}
+
+.full-blog-page h3{
+  font-size:1.5em;
+}
+
+.full-blog-img {
+  margin: 0 auto;
+  width:80%;
+}
+
+/* Ken Burn's Effect
+Thanks to Kirupa Chinnathambi @ 
+(https://www.kirupa.com/html5/ken_burns_effect_css.htm)
+*/
+
+.full-blog-img img{
+  border:2px solid black;
+  box-shadow: 6px 6px;
+  width:100%;
+  animation: kenburns 20s infinite;
+}
+
+/* @keyframes kenburns {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    transform: scale3d(1.5, 1.5, 1.5) translate3d(30px, 25px, 0px);
+    animation-timing-function: ease-in;
+    opacity:1;
+  }
+  100% {
+    transform: scale3d(2, 2 ,2) translate3d(25px, 20px, 0px);
+    opacity: 0;
+  }
+} */
+
+.full-blog-page p{
+  font-size:1.3em;
+  line-height:1.8em;
+  margin-top:-.5em;
+  margin-left:8%;
+  margin-right:8%;
+  padding:1em;
+}
+
+.full-blog-page a{
+  text-decoration:none;
+  color:black;
+  border-bottom:1px solid black;
+}
+
+#comment-label {
+  display:none;
+}
+
+/* #comment {
+  width: 
+} */
