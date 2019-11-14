@@ -19,8 +19,8 @@ export default class UpdateUser extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={(event) => {
+      <div className='update-user'>
+        <form className='update-form' onSubmit={(event) => {
           event.preventDefault();
           this.props.handleEditUser(this.props.id, this.state.userData)
         }}>
@@ -29,6 +29,7 @@ export default class UpdateUser extends React.Component {
             type="text"
             name="image_url"
             id="image"
+            placeholder="Insert Image URL"
             value={this.state.image_url}
             onChange={this.handleChange}
           />

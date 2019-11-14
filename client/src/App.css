@@ -23,6 +23,22 @@ label {
   width: 1px;
 }
 
+p {
+  font-family:'Literata', monospace;
+  font-size:1em;
+}
+
+h3 {
+  font-family:'Literata', monospace;
+  font-weight:600;
+  font-style:italic;
+}
+
+h2 {
+  font-weight:700;
+  font-style:italic;
+  letter-spacing:1px;
+}
 /* =============== Welcome Page ===================== */
 .welcome-main {
   background-color: #ffffff;
@@ -67,6 +83,8 @@ label {
 .welcome-page button {
   color: #ffffff;
   background-color: #201f20;
+  font-family:'Literata', monospace;
+  font-weight:600;
   font-size: 1.7em;
   padding:.5em;
   border: 4px solid white;
@@ -76,6 +94,8 @@ label {
 }
 
 .login button {
+  font-family:'Literata', Arial;
+  font-weight:600;
   box-shadow: 0 4px 20px 4px black;
 	background: linear-gradient(to bottom, white 10%, black 100%);
 	background-color: black;
@@ -83,18 +103,18 @@ label {
 	border: 2px solid black;
 	display: inline-block;
 	color: black;
-	font-family: Arial;
-	font-size: 26px;
-	font-weight: bold;
+	font-size: 1.6em;
 	padding: 16px 20px;
 	text-decoration: none;
   text-shadow: 1px 2px 6px #d8dae6;
-  animation-name: reveal;
+  animation-name: display;
   animation-duration: 1.6s;
+  animation-delay: 1.5s;
   animation-timing-function: ease-in;
   animation-direction: normal;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  opacity:0;
 }
 
 .login button:hover {
@@ -128,12 +148,15 @@ label {
 }
 
 .title-font {
-  font-family: sans-serif;
+  font-family: 'Arvo', sans-serif;
+  font-weight:700;
+  font-style:italic;
   font-size: 6.5em;
+  font-variant:small-caps;
   color: #201F20;
   letter-spacing: .1em;
   margin: .4em;
-  animation: reveal;
+  animation: display;
   animation-duration: 1.6s;
   animation-timing-function: ease-in;
   animation-delay: 1.5s;
@@ -145,6 +168,42 @@ label {
 }
 
 @keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: .1;
+  }
+  20% {
+    opacity: .2;
+  }
+  30% {
+    opacity: .3;
+  }
+  40% {
+    opacity: .4;
+  }
+  50% {
+    opacity: .5;
+  }
+  60% {
+    opacity: .6;
+  }
+  70% {
+    opacity: .7;
+  }
+  80% {
+    opacity: .8;
+  }
+  90% {
+    opacity: .9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes display {
   0% {
     opacity: 0;
   }
@@ -208,9 +267,15 @@ label {
 }
 
 #blog-list h1 {
+  font-family:'Arvo', Arial;
+  font-weight:700;
   text-align: center;
 }
 
+#blog-list button{
+  font-family:'Literata', Arial;
+  font-weight:600;
+}
 .blogs button {
   font-size: 1em;
   font-weight: bold;
@@ -271,10 +336,17 @@ label {
   text-align: center;
 }
 
+.main-side-top h1{
+  font-family:'Arvo', Arial;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
 .main-side-top button {
+  font-family:'Literata', Arial;
+  font-weight: 600;
   margin: 5px 10px;
   font-size: 1em;
-  font-weight: bold;
   width: 30%;
   height: 35px;
   background: whitesmoke;
@@ -312,6 +384,9 @@ label {
   margin: .5em;
 }
 
+.main-blog-blogs h2{
+  font-family:'Arvo', Arial;
+}
 .main-user-blogs {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -358,8 +433,12 @@ label {
 }
 
 .header a {
+  font-family:'Arvo';
+  font-style:italic;
+  font-variant:small-caps;
   text-decoration: none;
   color: #201E1F;
+  letter-spacing:1px;
 }
 
 .footer {
@@ -376,6 +455,16 @@ label {
   width: 50px;
 }
 
+#github {
+  height:2.7em;
+  width:1.2em;
+  background-color:white;
+  align-self:auto;
+  padding:.3em 2em .2em 0;
+  margin-right:1em;
+  border-radius:30px;
+}
+
 /*============================ [Form CSS] ===============================*/
 /* [TBU] Update If Desired */
 
@@ -389,7 +478,9 @@ label {
 }
 
 .login-form input {
-  font-size: 20px;
+  font-family:'Literata', monospace;
+  font-weight:600;
+  font-size: 1.2em;
   text-align: center;
   margin-bottom: 5vh;
   line-height: 50px;
@@ -406,10 +497,11 @@ label {
 }
 
 #submit {
+  font-family:'Literata', monospace;
+  font-weight: 600;
   width: 200px;
-  margin: 1.5vh auto;
-  font-size: 25px;
-  font-weight: 800;
+  margin: 0 auto;
+  font-size: 1.9em;
   line-height: 40px;
   border: 1px solid black;
   border-radius: 5px;
@@ -418,10 +510,11 @@ label {
 }
 
 #register-link {
+  font-family:'Literata', Arial;
+  font-weight: 600;
   width: 200px;
-  margin: 1.5vh auto;
-  font-size: 25px;
-  font-weight: 800;
+  margin: 0 auto;
+  font-size: 1.9em;
   line-height: 40px;
   border: 1px solid black;
   border-radius: 5px;
@@ -467,7 +560,9 @@ label {
 /* Register part */
 
 .register-form input {
-  font-size: 20px;
+  font-family:'Literata', Arial;
+  font-weight:600;
+  font-size: 1.2em;
   text-align: center;
   margin-bottom: 5vh;
   line-height: 50px;
@@ -484,10 +579,11 @@ label {
 }
 
 .register-form button {
-  width: 200px;
-  margin: 1.5vh auto;
-  font-size: 25px;
-  font-weight: 800;
+  font-family:'Literata', Arial;
+  width: 50%;
+  margin: 0 auto;
+  font-size: 1.7em;
+  font-weight: 600;
   line-height: 40px;
   border: 1px solid black;
   border-radius: 5px;
@@ -501,6 +597,12 @@ label {
   color: white;
   width: 225px;
   line-height: 50px;
+}
+
+.register-form h2{
+  font-family:'Literata', Arial;
+  font-weight:600;
+  font-style:italic;
 }
 
 .login-form input:hover, .register-form input:hover {
@@ -517,23 +619,29 @@ label {
   outline: none;
 }
 
+.login-form h2{
+  font-family:'Literata', Arial;
+  font-weight:600;
+  font-style:italic;
+}
+
 /*=========================== [Create Blog Form] =============================*/
 #create-form-title{
-  margin: 1.7em;
+  margin: 0 1.7em 0 1.7em;
   font-size: 2em;
+  padding-top:.7em;
 }
 
 .create-blog {
-  min-height: 90vh;
-  padding: 1.2em;
+  height: 75vh;
   text-align: center;
 }
 
 #create-form {
   display: grid;
   width: 35%;
-  margin: 0px auto;
-  margin-top: 3em;
+  margin: -1em auto 0 auto;
+  padding-top:3em;
 }
 
 .create-field {
@@ -585,11 +693,12 @@ label {
 
 #create-blog-button {
   background-color: black;
-  margin: 0 auto;
-  width: 25%;
+  font-family:'Literata', Arial;
   font-size: 1em;
+  font-weight: 700;
+  margin: 0 auto;
+  width: 28%;
   border: 2px solid black;
-  font-weight: 800;
   line-height: 40px;
   border-radius: .4em;
   opacity: .7;
@@ -613,16 +722,16 @@ label {
 }
 
 .edit-blog {
-  min-height: 90vh;
-  padding: 1.2em;
+  height:71.9vh;
+  padding: 1.2em 1.2em -4em 1.2em;
   text-align: center;
+  margin-top:-2em;
 }
 
 #edit-form {
   display: grid;
   width: 35%;
-  margin: 0px auto;
-  margin-top: 3em;
+  margin: -2em auto 0 auto;
 }
 
 .edit-field {
@@ -704,6 +813,9 @@ label {
 }
 
 .blog-title {
+  font-size:'Arvo', Arial;
+  font-weight:700;
+  font-style:italic;
   text-align: center;
   font-size: 2em;
 }
@@ -765,3 +877,48 @@ Thanks to Kirupa Chinnathambi @
 /* #comment {
   width: 
 } */
+
+/*=========================[Update User Form]===========================*/
+
+.update-form {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding-top:8%;
+}
+
+.update-form input{
+  font-family:'Literata', Arial;
+  font-weight:600;
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 15px;
+  line-height: 50px;
+  border-radius: 10px;
+  background-color: #CEC6C1;
+  border: none;
+  transition: background-color 1s;
+  width:30%;
+}
+
+.update-form button{
+  font-family:'Literata', Arial;
+  font-weight: 600;
+  margin: 5px 10px;
+  font-size: 1em;
+  width: 30%;
+  height: 35px;
+  background: whitesmoke;
+  border: 2px solid black;
+  border-radius: 10px;
+  transition: background-color 250ms linear;
+}
+
+.update-form button:hover{
+  background: black;
+  color: whitesmoke;
+}
+
+.update-user {
+  height:75vh;
+}

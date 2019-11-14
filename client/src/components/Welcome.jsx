@@ -13,8 +13,8 @@ export default function Welcome() {
           </Link>
         </div>
         <div className="welcome-title">
-          <h1 className="title-font"> UNDISCLOSED </h1>
-          <img src="https://i.imgur.com/phHcHGC.png" alt="city skyline"/>
+          <h1 className="title-font"> Undisclosed </h1>
+          <img src="https://i.imgur.com/phHcHGC.png" alt="city skyline" />
         </div>
       </div>
     </div>
