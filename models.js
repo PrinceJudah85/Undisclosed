@@ -2,14 +2,23 @@
 const { Sequelize } = require('sequelize');
 
 // Create a variable that is a connection to the database.
-const sequelize = new Sequelize({
-  database: 'undisclosed_db',
-  dialect: 'postgres',
-  define: {
-    underscored: true
-  }
-});
-
+let sequelize;
+if (process.env.DATABASE_URL) {
+  sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialect: 'postgres',
+    define: {
+      underscored: true
+    }
+  });
+} else {
+  sequelize = new Sequelize({
+    database: 'undisclosed_db',
+    dialect: 'postgres',
+    define: {
+      underscored: true,
+    },
+  });
+}
 
 class User extends Sequelize.Model { }
 
