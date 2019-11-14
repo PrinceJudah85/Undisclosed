@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 
 export default function MainPageUser(props) {
+
+  
   return (
     <div className="main-side">
       <div className="main-side-top">
@@ -34,7 +36,6 @@ export default function MainPageUser(props) {
               <div className="main-user-blog-heading">
                 <h2>{blog.title}</h2>
                 <h3>{blog.location}</h3>
-                {/* <p>{blog.content}</p> */}
               </div>
             </ div>
           ))

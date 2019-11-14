@@ -30,10 +30,6 @@ export default class RegisterForm extends React.Component {
           return;
         }
         this.props.handleRegister(this.state)
-        this.setState({
-          username: '',
-          password: ''
-        })
       }}>
         <Link to="/">
           <img src="https://i.imgur.com/SGdVbso.png" alt="undisclosed logo" />

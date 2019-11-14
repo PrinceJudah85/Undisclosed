@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Route, withRouter } from 'react-router-dom';
-import { registerUser, loginUser, verifyUser, getAllBlogs, getAllUserBlogs, getOneBlog, postBlog, deleteBlog, putBlog, putUser } from './services/api-helper';
+import { registerUser, loginUser, verifyUser, getAllBlogs, getAllUserBlogs, postBlog, deleteBlog, putBlog, putUser } from './services/api-helper';
 import Welcome from './components/Welcome';
 import Header from './components/Header';
 import RegisterForm from './components/RegisterForm';
@@ -103,7 +103,7 @@ class App extends React.Component {
 
   handleDelete = async (e) => {
     const id = e.target.id
-    const blog = await deleteBlog(id)
+    await deleteBlog(id)
     this.setState(prevState => ({
       blogs: [...prevState.blogs.filter(blog => { return blog.id !== parseInt(id) })],
       currentUserBlogs: [...prevState.currentUserBlogs.filter(currentBlog => { return currentBlog.id !== parseInt(id) })]
@@ -122,9 +122,9 @@ class App extends React.Component {
 
   handleEditUser = async (id, formData) => {
     const newUser = await putUser(id, formData);
-    this.setState({
-      currentUser: [this.state.currentUser.id === newUser.id ? newUser : this.state.currentUser]
-    })
+    this.setState(prevState => ({
+      currentUser: (prevState.currentUser.id === newUser.id ? newUser : this.state.currentUser)
+    }))
     this.props.history.push('/blogs')
   }
 

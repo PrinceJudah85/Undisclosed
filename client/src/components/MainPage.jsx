@@ -29,7 +29,7 @@ export default class MainPage extends React.Component {
         </div>
         {
           this.props.currentUser &&
-          < MainPageUser handleLogout={this.props.handleLogout} currentUser={this.props.currentUser} currentUserBlogs={this.props.currentUserBlogs} />
+          < MainPageUser handleLogout={this.props.handleLogout} currentUser={this.props.currentUser} currentUserBlogs={this.props.currentUserBlogs}/>
         }
       </div>
     )
