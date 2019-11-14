@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const commentRouter = Router({mergeParams: true});
-const { Comment } = require('../models.js')
+const { Comment, Blog } = require('../models.js')
 const { restrict } = require('../services/auth')
 
 commentRouter.route('/')
@@ -14,8 +14,16 @@ commentRouter.route('/')
   })
   .post(restrict, async (req, res, next) => {
     try {
-      const comment = await Comment.create({ ...req.body, userId: res.locals.user.id });
-      res.json(comment);
+      const comment = await Comment.create({ content: req.body.comment, userId: res.locals.user.id });
+      const blog = await Blog.findByPk(req.params.blog_id)
+      comment.setBlog(blog)
+      const newComment = await Comment.findOne({
+        where: {
+          id: comment.id
+        },
+        include: 'blog'
+      })
+      res.json(newComment);
     } catch (e) {
       next(e)
     }

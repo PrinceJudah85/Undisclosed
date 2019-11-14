@@ -46,7 +46,7 @@ export default class FullBlog extends React.Component {
             <div className='full-blog-img'>
               <img src={this.state.oneBlog.image_url} alt="blog location" />
             </div>
-            <h3>Author:<Link to={`/user_blogs/${this.state.oneBlog.userId}`}>{this.state.oneBlog.user.username}</Link></h3>
+            <h3>Author: <Link to={`/user_blogs/${this.state.oneBlog.userId}`}>{this.state.oneBlog.user.username}</Link></h3>
             <h3>{this.state.oneBlog.location}</h3>
             <p>{this.state.oneBlog.content}</p>
             <CreateComments createComment={this.createComment} blog_id={this.state.oneBlog.id} />

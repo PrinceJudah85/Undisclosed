@@ -812,6 +812,36 @@ h2 {
   margin: 0 10% 0 10%;
 }
 
+.full-blog-page h3 {
+  font-size: 1.5em;
+}
+
+.full-blog-page p {
+  font-size: 1.3em;
+  line-height: 1.8em;
+  margin-top: -.5em;
+  margin-left: 8%;
+  margin-right: 8%;
+  padding: 1em;
+}
+
+.full-blog-page button {
+  margin: 5px 10px;
+  font-size: 1em;
+  font-weight: bold;
+  width: 30%;
+  height: 35px;
+  background: whitesmoke;
+  border: 2px solid black;
+  border-radius: 10px;
+  transition: background-color 250ms linear;
+}
+
+.full-blog-page button:hover {
+  background: black;
+  color: whitesmoke;
+}
+
 .blog-title {
   font-size:'Arvo', Arial;
   font-weight:700;
@@ -820,19 +850,10 @@ h2 {
   font-size: 2em;
 }
 
-.full-blog-page h3{
-  font-size: 1.5em;
-}
-
 .full-blog-img {
   margin: 0 auto;
   width: 80%;
 }
-
-/* Ken Burn's Effect
-Thanks to Kirupa Chinnathambi @ 
-(https://www.kirupa.com/html5/ken_burns_effect_css.htm)
-*/
 
 .full-blog-img img{
   border: 2px solid black;
@@ -840,6 +861,11 @@ Thanks to Kirupa Chinnathambi @
   width: 100%;
   animation: kenburns 20s infinite;
 }
+
+/* Ken Burn's Effect
+Thanks to Kirupa Chinnathambi @ 
+(https://www.kirupa.com/html5/ken_burns_effect_css.htm)
+*/
 
 /* @keyframes kenburns {
   0% {
@@ -858,21 +884,6 @@ Thanks to Kirupa Chinnathambi @
     opacity: 0;
   }
 } */
-
-.full-blog-page p{
-  font-size: 1.3em;
-  line-height: 1.8em;
-  margin-top: -.5em;
-  margin-left: 8%;
-  margin-right: 8%;
-  padding: 1em;
-}
-
-.full-blog-page a{
-  text-decoration: none;
-  color: black;
-  border-bottom: 1px solid black;
-}
 
 /* #comment {
   width: 
