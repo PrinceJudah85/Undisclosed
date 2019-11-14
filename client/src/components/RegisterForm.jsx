@@ -3,7 +3,8 @@ import React from 'react'
 export default class RegisterForm extends React.Component {
   state = {
     username: '',
-    password: ''
+    password: '',
+    city: ''
   }
 
   handleChange = (event) => {
@@ -35,6 +36,14 @@ export default class RegisterForm extends React.Component {
           id="password"
           type="password"
           value={this.state.password}
+          onChange={this.handleChange}
+        />
+        <label htmlFor="city">City</label>
+        <input
+          name="city"
+          id="city"
+          type="text"
+          value={this.state.city}
           onChange={this.handleChange}
         />
         <button>Submit</button>
