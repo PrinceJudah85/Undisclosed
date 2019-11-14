@@ -18,6 +18,9 @@ export default class LoginForm extends Component {
         e.preventDefault()
         this.props.handleLogin(this.state)
       }}>
+        <Link to="/">
+          <img src="https://i.imgur.com/SGdVbso.png" alt="undisclosed logo" />
+        </Link>
         <h2>Login</h2>
         <label htmlFor="username">Username</label>
         <input

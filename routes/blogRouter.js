@@ -7,7 +7,10 @@ const { restrict } = require('../services/auth')
 blogRouter.route('/')
   .get(async (req, res, next) => {
     try {
-      const blogs = await Blog.findAll({ include: 'user' }); // UPDATED
+      const blogs = await Blog.findAll({
+        include: 'user',
+        // order: [id, DESC] [TBU - Ask Brian if this is the right way to order blogList]
+      });
       res.json(blogs);
     } catch (e) {
       next(e)

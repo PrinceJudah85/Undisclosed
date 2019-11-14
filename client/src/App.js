@@ -133,18 +133,20 @@ class App extends React.Component {
 
       <div className="App" >
         <Route exact path="/" render={() => (<Welcome />)} />
-        
-        <Header />
+        {
+          this.state.currentUser ?
+            <Header /> : <div></div>
+        }
         {
           this.state.currentUser && this.state.blogs ?
             <Route exact path="/blogs" render={() => (<MainPage oneBlog={this.state.oneBlog} blogs={this.state.blogs} currentUser={this.state.currentUser} currentUserBlogs={this.state.currentUserBlogs} handleLogout={this.handleLogout} />)} /> :
             <div></div>
         }
-        
+
         <Route path="/login" render={() => (<LoginForm handleLogin={this.handleLogin} authErrorMessage={this.state.authErrorMessage} />)} />
 
         <Route path='/register' render={() => (<RegisterForm handleRegister={this.handleRegister} authErrorMessage={this.state.authErrorMessage} />)} />
-        
+
         <Route path="/full_blog/:id" render={(props) => (<FullBlog id={props.match.params.id} blogs={this.state.blogs} oneBlog={this.state.oneBlog} currentUserBlogs={this.state.currentUserBlogs} currentUser={this.state.currentUser} handleDelete={this.handleDelete} />)} />
 
         <Route path='/blogs/new' render={() => (<CreateBlog currentUser={this.state.currentUser} createBlog={this.createBlog} />)} />
@@ -152,10 +154,13 @@ class App extends React.Component {
         <Route path="/user_blogs/:id" render={(props) => (<UserBlogs allUserBlogs={this.allUserBlogs} id={props.match.params.id} />)} />
 
         <Route path="/edit/:id" render={(props) => (<EditBlog id={props.match.params.id} handleChange={this.handleChange} handleEdit={this.handleEdit} currentUser={this.state.currentUser} />)} />
+        {
+          this.state.currentUser ?
+            <Footer /> : <div></div>
+        }
 
         <Route path="/update_profile/:id" render={(props) => (<UpdateUser id={props.match.params.id} currentUser={this.state.currentUser} handleEditUser={this.handleEditUser} />)} />
-        
-        <Footer />
+
       </div>
     );
   }

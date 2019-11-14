@@ -23,6 +23,41 @@ button {
 
 .login {
   align-self: flex-end;
+  margin-right:2em;
+  padding:1em;
+}
+
+.login-form img {
+  margin: 100px auto 20px auto;
+  border: 1px solid black;
+  border-radius: 120px;
+  transition: transform 2s ease-in-out;
+  width: 40%;
+}
+
+.login-form img:hover {
+  transform: rotate(1080deg );
+}
+
+.register-form img {
+  margin: 100px auto 20px auto;
+  border: 1px solid black;
+  border-radius: 120px;
+  transition: transform 2s ease-in-out;
+  width: 40%;
+}
+
+.register-form img:hover {
+  transform: rotate(1080deg );
+}
+
+.welcome-page button {
+  color: #ffffff;
+  background-color:#201f20;
+  font-size: 1.7em;
+  padding:.5em;
+  border: 4px solid white;
+  animation-name: login;
   margin-right: 2em;
   padding: 1em;
 }
@@ -261,14 +296,24 @@ button {
   background-color: white;
 }
 
-/* .black {
+.black {
   background-color: #201E1F;
-} */
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
 
-.black h1 {
+.main-side-top-buttons h1 {
   margin: 0;
   padding-top: 20px;
   padding-bottom: 10px;
+}
+
+.main-user-blogs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #201E1F;
+  color: white;
 }
 
 .main-user-blogs {
