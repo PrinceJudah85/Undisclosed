@@ -2,7 +2,7 @@ body {
   margin: 0;
 }
 
-/* ====================== [Welcome Page] ======================= */\
+/* ====================== [Welcome Page] ======================= */
 
 .welcome-main {
   background-color: #201F20;
@@ -18,6 +18,30 @@ body {
   align-self: flex-end;
   margin-right:2em;
   padding:1em;
+}
+
+.login-form img {
+  margin: 100px auto 20px auto;
+  border: 1px solid black;
+  border-radius: 120px;
+  transition: transform 2s ease-in-out;
+  width: 40%;
+}
+
+.login-form img:hover {
+  transform: rotate(1080deg );
+}
+
+.register-form img {
+  margin: 100px auto 20px auto;
+  border: 1px solid black;
+  border-radius: 120px;
+  transition: transform 2s ease-in-out;
+  width: 40%;
+}
+
+.register-form img:hover {
+  transform: rotate(1080deg );
 }
 
 .welcome-page button {
@@ -293,11 +317,14 @@ body {
     background-color: white;
   }
 
-  /* .black {
+  .black {
     background-color: #201E1F;
-  } */
+    color: white;
+    margin: 0;
+    padding: 20px;
+  }
 
-  .black h1 {
+  .main-side-top-buttons h1 {
     margin: 0;
     padding-top: 20px;
     padding-bottom: 10px;
@@ -676,5 +703,4 @@ body {
   display:flex;
   flex-direction: column;
   justify-content:center;
-  
 }

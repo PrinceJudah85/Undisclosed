@@ -121,7 +121,10 @@ class App extends React.Component {
     return (
       <div className="App" >
         <Route exact path="/" render={() => (<Welcome />)} />
-        <Header />
+        {
+          this.state.currentUser ?
+            <Header /> : <div></div>
+        }
         {
           this.state.currentUser && this.state.blogs ?
             <Route exact path="/blogs" render={() => (<MainPage oneBlog={this.state.oneBlog} blogs={this.state.blogs} currentUser={this.state.currentUser} currentUserBlogs={this.state.currentUserBlogs} handleLogout={this.handleLogout} />)} /> :
@@ -133,7 +136,10 @@ class App extends React.Component {
         <Route path='/blogs/new' render={() => (<CreateBlog currentUser={this.state.currentUser} createBlog={this.createBlog} />)} />
         <Route path="/user_blogs/:id" render={(props) => (<UserBlogs allUserBlogs={this.allUserBlogs} id={props.match.params.id} />)} />
         <Route path="/edit/:id" render={(props) => (<EditBlog id={props.match.params.id} handleChange={this.handleChange} handleEdit={this.handleEdit} currentUser={this.state.currentUser} />)} />
-        <Footer />
+        {
+          this.state.currentUser ?
+            <Footer /> : <div></div>
+        }
       </div>
     );
   }
