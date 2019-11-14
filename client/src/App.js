@@ -119,9 +119,9 @@ class App extends React.Component {
 
   handleEditUser = async (id, formData) => {
     const newUser = await putUser(id, formData);
-    this.setState({
-      currentUser: [this.state.currentUser.id === newUser.id ? newUser : this.state.currentUser]
-    })
+    this.setState( prevState => ({
+      currentUser: (prevState.currentUser.id === newUser.id ? newUser : this.state.currentUser)
+    }))
     this.props.history.push('/blogs')
   }
 
