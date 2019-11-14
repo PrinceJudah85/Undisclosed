@@ -10,6 +10,19 @@ button {
   cursor: url(https://res.cloudinary.com/v3rymatt/image/upload/c_fill,h_32,q_100,r_30,w_32,x_113,y_85/v1573684694/untitled_ir33dm.png), pointer;
 }
 
+/* label CSS is known as "Clipping CSS Snippet": https://www.nomensa.com/blog/2017/how-improve-web-accessibility-hiding-elements */
+label {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 /* =============== Welcome Page ===================== */
 .welcome-main {
   background-color: #ffffff;
@@ -23,15 +36,15 @@ button {
 
 .login {
   align-self: flex-end;
-  margin-right:2em;
-  padding:1em;
+  margin: 15vh 5vh 0 5vh;
+  padding: 1em;
 }
 
 .login-form img {
   margin: 100px auto 20px auto;
   border: 1px solid black;
   border-radius: 120px;
-  transition: transform 2s ease-in-out;
+  transition: transform 4s ease-in-out;
   width: 40%;
 }
 
@@ -53,7 +66,7 @@ button {
 
 .welcome-page button {
   color: #ffffff;
-  background-color:#201f20;
+  background-color: #201f20;
   font-size: 1.7em;
   padding:.5em;
   border: 4px solid white;
@@ -63,20 +76,19 @@ button {
 }
 
 .login button {
-  box-shadow: 0 4px 20px 4px #6a9eb0;
-	background: linear-gradient(to bottom, #a1a6fc 5%, #e3c7e3 100%);
-	background-color: #a1a6fc;
+  box-shadow: 0 4px 20px 4px black;
+	background: linear-gradient(to bottom, white 10%, black 100%);
+	background-color: black;
 	border-radius: 16px;
-	border: 2px solid #d6bcd6;
+	border: 2px solid black;
 	display: inline-block;
-	color: #3094b8;
+	color: black;
 	font-family: Arial;
 	font-size: 26px;
 	font-weight: bold;
 	padding: 16px 20px;
 	text-decoration: none;
   text-shadow: 1px 2px 6px #d8dae6;
-  /* cursor: url(https://res.cloudinary.com/v3rymatt/image/upload/c_fill,h_32,q_100,r_30,w_32,x_113,y_85/v1573684694/untitled_ir33dm.png), pointer; */
   animation-name: reveal;
   animation-duration: 1.6s;
   animation-timing-function: ease-in;
@@ -86,7 +98,7 @@ button {
 }
 
 .login button:hover {
-	background: linear-gradient(to bottom, #e3c7e3 5%, #a1a6fc 100%);
+	background: linear-gradient(to bottom, black 10%, white 100%);
 }
 
 .login button:active {
@@ -95,18 +107,10 @@ button {
 }
 
 .welcome-title {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  margin-top: 8%;
-  background-image: url('http://blkhack.com/wp-content/uploads/2016/11/tumblr_static_tumblr1.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 120vh;
+  text-align: center;
+  margin: 0 auto;
+  height: 70vh;
   width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
   border-bottom: 1em solid #201f20;
   animation-name: reveal;
   animation-duration: 1.6s;
@@ -117,6 +121,10 @@ button {
   animation-fill-mode: forwards;
   animation-play-state: running;
   opacity: 0;
+}
+
+.welcome-title img {
+  width: 100%;
 }
 
 .title-font {
@@ -223,9 +231,8 @@ button {
 }
 
 #user-image {
-  height: 200px;
   width: 200px;
-  background-color: darksalmon;
+  margin: 0 auto;
   padding: 5px;
 }
 
@@ -244,13 +251,6 @@ button {
   box-shadow: 4px 4px;
 }
 
-/* .blogs h4 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
-} */
-
 .main-side {
   grid-area: side;
   border-left: 3px solid #201E1F;
@@ -263,8 +263,8 @@ button {
 }
 
 .main-side img {
-  max-width: 80%;
-  border-radius: 50px;
+  max-width: 60%;
+  border-radius: 30%;
 }
 
 .main-side-top {
@@ -272,16 +272,16 @@ button {
 }
 
 .main-side-top button {
-  margin: 10px 10px;
-  font-size: 2em;
+  margin: 5px 10px;
+  font-size: 1em;
   font-weight: bold;
-  width: 250px;
-  height: 50px;
+  width: 30%;
+  height: 35px;
   background: whitesmoke;
   border: 2px solid black;
   border-radius: 10px;
   transition: background-color 250ms linear;
-  }
+}
 
 .main-side-top button:hover {
   background: black;
@@ -292,7 +292,7 @@ button {
   position: -webkit-sticky;
   position: sticky;
   top: -1px;
-  margin-bottom: 35px;
+  margin-bottom: 10px;
   background-color: white;
 }
 
@@ -306,7 +306,10 @@ button {
 .main-side-top-buttons h1 {
   margin: 0;
   padding-top: 20px;
-  padding-bottom: 10px;
+}
+
+.main-side-top-buttons h3 {
+  margin: .5em;
 }
 
 .main-user-blogs {
@@ -386,23 +389,35 @@ button {
 }
 
 .login-form input {
-  margin-bottom: 50px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 5vh;
   line-height: 50px;
   border-radius: 10px;
-  background-color: #CEC6C1;
+  background-color: black;
   border: none;
-  transition: background-color 1s;
+  transition: background-color 1.2s;
+  color: black;
+}
+
+.login-form input:not:hover {
+  color: white;
+}
+
+.login-form input::placeholder {
+  color: white;
+  transition: color 1.2s;
 }
 
 #submit {
   width: 200px;
-  margin: 0 auto;
+  margin: 3vh auto;
   font-size: 25px;
   font-weight: 800;
   line-height: 40px;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: #CEC6C1;
+  background-color: white;
   transition: background-color 1s;
 }
 
@@ -414,18 +429,24 @@ button {
   line-height: 40px;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: #CEC6C1;
+  background-color: white;
   transition: background-color 1s, transform 1s ease-in-out;
 }
 
 #register-link a{
-  text-decoration:none;
+  text-decoration: none;
   color: #1F1E1E;
 }
+
+#register-link a:hover {
+  color: white;
+}
+
 #submit:hover, #register-link:hover{
-  background-color: rgb(216, 147, 147);
-  cursor: pointer;
-  animation: shake 0.8s;
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  animation: shake 0.5s;
   transform: translate3d(0, 0, 0);
   perspective: 100px;
 } 
@@ -452,6 +473,8 @@ button {
 /* Register part */
 
 .register-form input {
+  font-size: 20px;
+  text-align: center;
   margin-bottom: 15px;
   line-height: 50px;
   border-radius: 10px;
@@ -480,24 +503,14 @@ button {
   perspective: 100px;
 }
 
-/* Combined & etc. */
-
-.login-form input, .register-form input {
-  font-size: 20px;
-  text-align: center;
-}
-
 .login-form input:hover, .register-form input:hover {
-  background-color: rgb(230, 211, 211);
-}
-
-.login-form input, .register-form input {
-  font-size: 20px;
-  text-align: center;
+  background-color: white;
+  border-bottom: 2px solid black;
 }
 
 .login-form input:active, .register-form input:active {
-  background-color: aquamarine;
+  background-color: white;
+  border-bottom: 2px solid black;
 }
 
 .login-form *:focus, .register-form *:focus {
@@ -506,210 +519,202 @@ button {
 
 /*=========================== [Create Blog Form] =============================*/
 #create-form-title{
-  margin:1.7em;
-  font-size:2em;
+  margin: 1.7em;
+  font-size: 2em;
 }
 
 .create-blog {
-  min-height:90vh;
-  padding:1.2em;
-  text-align:center;
+  min-height: 90vh;
+  padding: 1.2em;
+  text-align: center;
 }
 
 #create-form {
-  display:grid;
-  width:35%;
-  margin:0px auto;
-  margin-top:3em;
+  display: grid;
+  width: 35%;
+  margin: 0px auto;
+  margin-top: 3em;
 }
 
 .create-field {
-  font-size:1em;
-  background-color:black;
+  font-size: 1em;
+  background-color: black;
   border: 2px solid #CEC6C1;
   border-radius: .4em;
   margin-bottom: 15px;
   line-height: 30px;
   opacity: .7;
-  outline:none;
+  outline: none;
 }
 
 .create-field:hover{
-  background-color:white;
+  background-color: white;
   opacity: .9;
   transition: opacity, background-color .7s;
   border: 2px black solid;
 }
 .create-field::placeholder{
-  color:white;
+  color: white;
 }
 
 .create-field::placeholder:hover{
-  color:black;
+  color: black;
 }
 
 #content {
   border: 2px solid black;
-  font-size:1em;
+  font-size: 1em;
   margin-bottom: 1em;
   height: 20vh;
   border-radius: 5px;
   background-color: black;
-  opacity:.7;
-  outline:none;
+  opacity: .7;
+  outline: none;
 }
 
 #content:hover{
-  background-color:white;
-  opacity:.9;
+  background-color: white;
+  opacity: .9;
   transition: opacity, background-color .7s;
   border: 2px solid black;
 }
 
 #content::placeholder{
-  color:white;
+  color: white;
 }
 
 #create-blog-button {
   background-color: black;
-  margin:0 auto;
-  width:25%;
+  margin: 0 auto;
+  width: 25%;
   font-size: 1em;
   border: 2px solid black;
-  font-weight:800;
+  font-weight: 800;
   line-height: 40px;
   border-radius: .4em;
-  opacity:.7;
-  color:white;
-  width:30%;
-  letter-spacing:1px;
+  opacity: .7;
+  color: white;
+  width: 30%;
+  letter-spacing: 1px;
 }
 
 #create-blog-button:hover{
-  background-color:white;
-  opacity:.9;
+  background-color: white;
+  opacity: .9;
   transition: opacity, background-color .7s;
-  color:black;
-}
-
-.create-label {
-  display: none;
+  color: black;
 }
 
 /*==========================[Edit Blog form]============================*/
 
 #edit-form-title{
-  margin:1.7em;
-  font-size:2em;
+  margin: 1.7em;
+  font-size: 2em;
 }
 
 .edit-blog {
-  min-height:90vh;
-  padding:1.2em;
-  text-align:center;
+  min-height: 90vh;
+  padding: 1.2em;
+  text-align: center;
 }
 
 #edit-form {
-  display:grid;
-  width:35%;
-  margin:0px auto;
-  margin-top:3em;
+  display: grid;
+  width: 35%;
+  margin: 0px auto;
+  margin-top: 3em;
 }
 
 .edit-field {
-  font-size:1em;
-  background-color:black;
+  font-size: 1em;
+  background-color: black;
   border: 2px solid #CEC6C1;
   border-radius: .4em;
   margin-bottom: 15px;
   line-height: 30px;
   opacity: .7;
-  outline:none;
+  outline: none;
 }
 
 .edit-field:hover{
-  background-color:white;
+  background-color: white;
   opacity: .9;
   transition: opacity, background-color .7s;
   border: 2px black solid;
 }
 .edit-field::placeholder{
-  color:white;
+  color: white;
 }
 
 .edit-field::placeholder:hover{
-  color:black;
+  color: black;
 }
 
 #edit-content {
   border: 2px solid black;
-  font-size:1em;
+  font-size: 1em;
   margin-bottom: 1em;
   height: 20vh;
   border-radius: 5px;
   background-color: black;
-  opacity:.7;
-  outline:none;
+  opacity: .7;
+  outline: none;
 }
 
 #edit-content:hover{
-  background-color:white;
-  opacity:.9;
+  background-color: white;
+  opacity: .9;
   transition: opacity, background-color .7s;
   border: 2px solid black;
 }
 
 #edit-content::placeholder{
-  color:white;
+  color: white;
 }
 
 #edit-blog-button {
   background-color: black;
-  margin:0 auto;
-  width:25%;
+  margin: 0 auto;
+  width: 25%;
   font-size: 1em;
   border: 2px solid black;
-  font-weight:800;
+  font-weight: 800;
   line-height: 40px;
   border-radius: .4em;
-  opacity:.7;
-  color:white;
-  width:30%;
-  letter-spacing:1px;
+  opacity: .7;
+  color: white;
+  width: 30%;
+  letter-spacing: 1px;
 }
 
 #edit-blog-button:hover{
-  background-color:white;
-  opacity:.9;
+  background-color: white;
+  opacity: .9;
   transition: opacity, background-color .7s;
-  color:black;
-}
-
-.edit-label {
-  display: none;
+  color: black;
 }
 
 /*============================[Full Blog Page]=============================*/
 
 .full-blog-page {
-  display:flex;
+  display: flex;
   flex-direction: column;
-  justify-content:center;
-  margin:0 10% 0 10%;
+  justify-content: center;
+  margin: 0 10% 0 10%;
 }
 
 .blog-title {
-  text-align:center;
-  font-size:2em;
+  text-align: center;
+  font-size: 2em;
 }
 
 .full-blog-page h3{
-  font-size:1.5em;
+  font-size: 1.5em;
 }
 
 .full-blog-img {
   margin: 0 auto;
-  width:80%;
+  width: 80%;
 }
 
 /* Ken Burn's Effect
@@ -718,9 +723,9 @@ Thanks to Kirupa Chinnathambi @
 */
 
 .full-blog-img img{
-  border:2px solid black;
+  border: 2px solid black;
   box-shadow: 6px 6px;
-  width:100%;
+  width: 100%;
   animation: kenburns 20s infinite;
 }
 
@@ -743,22 +748,18 @@ Thanks to Kirupa Chinnathambi @
 } */
 
 .full-blog-page p{
-  font-size:1.3em;
-  line-height:1.8em;
-  margin-top:-.5em;
-  margin-left:8%;
-  margin-right:8%;
-  padding:1em;
+  font-size: 1.3em;
+  line-height: 1.8em;
+  margin-top: -.5em;
+  margin-left: 8%;
+  margin-right: 8%;
+  padding: 1em;
 }
 
 .full-blog-page a{
-  text-decoration:none;
-  color:black;
-  border-bottom:1px solid black;
-}
-
-#comment-label {
-  display:none;
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid black;
 }
 
 /* #comment {
