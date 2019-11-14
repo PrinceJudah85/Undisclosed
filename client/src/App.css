@@ -1,5 +1,13 @@
+*:focus {
+  outline: none;
+}
+
 body {
   margin: 0;
+}
+
+button {
+  cursor: url(https://res.cloudinary.com/v3rymatt/image/upload/c_fill,h_32,q_100,r_30,w_32,x_113,y_85/v1573684694/untitled_ir33dm.png), pointer;
 }
 
 /* =============== Welcome Page ===================== */
@@ -15,60 +23,40 @@ body {
 
 .login {
   align-self: flex-end;
-  margin-right:2em;
-  padding:1em;
+  margin-right: 2em;
+  padding: 1em;
 }
 
-.welcome-page button {
-  color: #ffffff;
-  background-color:#201f20;
-  font-size: 1.7em;
-  padding:.5em;
-  border: 4px solid white;
-  animation-name: login;
+.login button {
+  box-shadow: 0 4px 20px 4px #6a9eb0;
+	background: linear-gradient(to bottom, #a1a6fc 5%, #e3c7e3 100%);
+	background-color: #a1a6fc;
+	border-radius: 16px;
+	border: 2px solid #d6bcd6;
+	display: inline-block;
+	color: #3094b8;
+	font-family: Arial;
+	font-size: 26px;
+	font-weight: bold;
+	padding: 16px 20px;
+	text-decoration: none;
+  text-shadow: 1px 2px 6px #d8dae6;
+  /* cursor: url(https://res.cloudinary.com/v3rymatt/image/upload/c_fill,h_32,q_100,r_30,w_32,x_113,y_85/v1573684694/untitled_ir33dm.png), pointer; */
+  animation-name: reveal;
   animation-duration: 1.6s;
   animation-timing-function: ease-in;
-  animation-delay: 1.5s;
   animation-direction: normal;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  opacity: 0;
 }
 
-@keyframes login {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: .1;
-  }
-  20% {
-    opacity: .2;
-  }
-  30% {
-    opacity: .3;
-  }
-  40% {
-    opacity: .4;
-  }
-  50% {
-    opacity: .5;
-  }
-  60% {
-    opacity: .6;
-  }
-  70% {
-    opacity: .7;
-  }
-  80% {
-    opacity: .8;
-  }
-  90% {
-    opacity: .9;
-  }
-  100% {
-    opacity: 1;
-  }
+.login button:hover {
+	background: linear-gradient(to bottom, #e3c7e3 5%, #a1a6fc 100%);
+}
+
+.login button:active {
+	position: relative;
+  top: 10px;
 }
 
 .welcome-title {
@@ -85,7 +73,7 @@ body {
   margin-left: 5%;
   margin-right: 5%;
   border-bottom: 1em solid #201f20;
-  animation-name: pulse;
+  animation-name: reveal;
   animation-duration: 1.6s;
   animation-timing-function: ease-in;
   animation-delay: .5s;
@@ -94,42 +82,6 @@ body {
   animation-fill-mode: forwards;
   animation-play-state: running;
   opacity: 0;
-}
-
-@keyframes pulse {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: .1;
-  }
-  20% {
-    opacity: .2;
-  }
-  30% {
-    opacity: .3;
-  }
-  40% {
-    opacity: .4;
-  }
-  50% {
-    opacity: .5;
-  }
-  60% {
-    opacity: .6;
-  }
-  70% {
-    opacity: .7;
-  }
-  80% {
-    opacity: .8;
-  }
-  90% {
-    opacity: .9;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .title-font {
@@ -216,7 +168,7 @@ body {
   text-align: center;
 }
 
-.blogs button{
+.blogs button {
   font-size: 1em;
   font-weight: bold;
   background: whitesmoke;
@@ -279,83 +231,85 @@ body {
   transition: background-color 250ms linear;
   }
 
-  .main-side-top button:hover {
-    background: black;
-    color: whitesmoke;
-  }
+.main-side-top button:hover {
+  background: black;
+  color: whitesmoke;
+}
 
-  .sticky {
-    position: -webkit-sticky;
-    position: sticky;
-    top: -1px;
-    margin-bottom: 35px;
-    background-color: white;
-  }
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
+  margin-bottom: 35px;
+  background-color: white;
+}
 
-  /* .black {
-    background-color: #201E1F;
-  } */
+/* .black {
+  background-color: #201E1F;
+} */
 
-  .black h1 {
-    margin: 0;
-    padding-top: 20px;
-    padding-bottom: 10px;
-  }
-  
-  .main-user-blogs {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    background-color: #201E1F;
-    color: white;
-  }
+.black h1 {
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
 
-  .main-user-blogs img {
-    justify-self: center;
-    margin: 10px 0;
-  }
+.main-user-blogs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #201E1F;
+  color: white;
+}
 
-  .main-user-blog-heading {
-    align-self: center;
-  }
+.main-user-blogs img {
+  justify-self: center;
+  margin: 10px 0;
+}
 
-  /* ================= Header / Footer ==================== */
+.main-user-blog-heading {
+  align-self: center;
+}
 
-  .full-blog-div {
-    text-align: center;
-  }
+.full-blog-div {
+  text-align: center;
+}
 
-  .full-blog-div img {
-    width: 50%;
-  }
+.full-blog-div img {
+  width: 50%;
+}
 
-  /* ================= Header / Footer ==================== */
-  .header {
-    background-image: url(http://blkhack.com/wp-content/uploads/2016/11/tumblr_static_tumblr1.jpg);
-    background-size: contain;
-    background-repeat: initial;
-    font-size: 2em;
-    height: 15vh;
-    line-height: 7.5vh;
-    margin: 0;
-    border-bottom: 1.2px solid black;
-    padding: 0;
-    text-align: center;
-  }
+/* ================= Header / Footer ==================== */
+.header {
+  background-image: url('http://blkhack.com/wp-content/uploads/2016/11/tumblr_static_tumblr1.jpg');
+  background-size: contain;
+  background-repeat: initial;
+  font-size: 2em;
+  height: 15vh;
+  line-height: 7.5vh;
+  margin: 0;
+  border-bottom: 1.2px solid black;
+  padding: 0;
+  text-align: center;
+}
 
-  .header a {
-    text-decoration: none;
-    color: #201E1F;
-  }
+.header a {
+  text-decoration: none;
+  color: #201E1F;
+}
 
-  .footer {
-    width: 100%;
-    height: 10vh;
-    background-color: black;
-    color: whitesmoke;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.footer {
+  width: 100%;
+  height: 10vh;
+  background-color: black;
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer img {
+  width: 50px;
+}
 
 /*========================== Form CSS =============================*/
 /* [TBU] Update If Desired */
@@ -402,7 +356,7 @@ body {
   transition: background-color 1s, transform 1s ease-in-out;
 }
 
-#submit:hover, #register-link:hover{
+#submit:hover, #register-link:hover {
   background-color: rgb(216, 147, 147);
   cursor: pointer;
   animation: shake 0.8s;
@@ -478,10 +432,6 @@ body {
 
 .login-form input:active, .register-form input:active {
   background-color: aquamarine;
-}
-
-.login-form *:focus, .register-form *:focus {
-  outline: none;
 }
 
 /*========================== [Next Part CSS] =============================*/
