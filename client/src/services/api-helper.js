@@ -41,6 +41,11 @@ export const verifyUser = async () => {
   return false
 }
 
+export const putUser = async (user_id, userData) => {
+  const response = await api.put(`/users/${user_id}`, userData);
+  return response.data;
+}
+
 // ============== Blogs ================
 export const getAllBlogs = async () => {
   const response = await api.get('/blogs');

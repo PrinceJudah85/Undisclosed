@@ -47,7 +47,7 @@ export default class CreateBlog extends React.Component {
           />
           <br />
           <label htmlFor="content">Content</label>
-          <input
+          <textarea
             type="text"
             name="content"
             id="content"
