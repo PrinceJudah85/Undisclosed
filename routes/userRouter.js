@@ -25,7 +25,7 @@ userRouter.post('/register', async (req, res, next) => {
   try {
     const password_digest = await hashPassword(req.body.password);
     const { username } = req.body;
-    const {city} = req.body
+    const { city } = req.body;
 
     const user = await User.create({
       username,

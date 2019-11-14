@@ -154,12 +154,13 @@ class App extends React.Component {
         <Route path="/user_blogs/:id" render={(props) => (<UserBlogs allUserBlogs={this.allUserBlogs} id={props.match.params.id} />)} />
 
         <Route path="/edit/:id" render={(props) => (<EditBlog id={props.match.params.id} handleChange={this.handleChange} handleEdit={this.handleEdit} currentUser={this.state.currentUser} />)} />
+
+        <Route path="/update_profile/:id" render={(props) => (<UpdateUser id={props.match.params.id} currentUser={this.state.currentUser} handleEditUser={this.handleEditUser} />)} />
         {
           this.state.currentUser ?
             <Footer /> : <div></div>
         }
 
-        <Route path="/update_profile/:id" render={(props) => (<UpdateUser id={props.match.params.id} currentUser={this.state.currentUser} handleEditUser={this.handleEditUser} />)} />
 
       </div>
     );
