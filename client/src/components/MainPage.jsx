@@ -20,7 +20,7 @@ export default class MainPage extends React.Component {
                   <h3>Created by: {blog.user.username}</h3>
                   <p>{blog.content}</p>
                   <Link to={`/full_blog/${blog.id}`}>
-                    <button id={blog.id} onClick={this.props.handleClick}>...read more!</button>
+                    <button id={blog.id}>...read more!</button>
                   </Link>
                 </div>
               </div>

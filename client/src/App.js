@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Route, Link, withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import { registerUser, loginUser, verifyUser, getAllBlogs, getAllUserBlogs, getOneBlog, postBlog, deleteBlog, putBlog, putUser } from './services/api-helper';
 import Welcome from './components/Welcome';
 import Header from './components/Header';
@@ -13,7 +13,6 @@ import MainPage from './components/MainPage';
 import FullBlog from './components/FullBlog';
 import UserBlogs from './components/UserBlogs';
 import Footer from './components/Footer';
-// import UserBlogs from './components/UserBlogs';     <---[TBU] need to create the route for this
 
 class App extends React.Component {
   constructor() {
@@ -23,16 +22,9 @@ class App extends React.Component {
       authErrorMessage: '',
       blogs: [],
       currentUserBlogs: [],
-      oneBlog: {},
-      userData: {}
     }
   }
 
-  handleClick = async (e) => {
-    const id = parseInt(e.target.id);
-    const oneBlog = await getOneBlog(id)
-    this.setState({ oneBlog })
-  }
 
   handleLogin = async (loginData) => {
     const currentUser = await loginUser(loginData);
@@ -119,13 +111,13 @@ class App extends React.Component {
     this.props.history.push('/blogs')
   }
 
-  handleEdit = async (id, formData) => {
-    const newBlog = await putBlog(id, formData);
+  handleEdit = async (id, formData, userId) => {
+    const newBlog = await putBlog(id, formData, userId);
     this.setState(prevState => ({
       blogs: [...prevState.blogs.map(blog => blog.id === newBlog.id ? newBlog : blog)],
       currentUserBlogs: [...prevState.currentUserBlogs.map(currentBlog => currentBlog.id === newBlog.id ? newBlog : currentBlog)]
     }))
-    this.props.history.push('/blogs')
+    this.props.history.push(`/full_blog/${id}`)
   }
 
   handleEditUser = async (id, formData) => {
@@ -141,22 +133,25 @@ class App extends React.Component {
 
       <div className="App" >
         <Route exact path="/" render={() => (<Welcome />)} />
+        
         <Header />
         {
           this.state.currentUser && this.state.blogs ?
-            <Route exact path="/blogs" render={() => (<MainPage oneBlog={this.state.oneBlog} handleClick={this.handleClick} blogs={this.state.blogs} currentUser={this.state.currentUser} currentUserBlogs={this.state.currentUserBlogs} handleLogout={this.handleLogout} />)} /> : null
+            <Route exact path="/blogs" render={() => (<MainPage oneBlog={this.state.oneBlog} blogs={this.state.blogs} currentUser={this.state.currentUser} currentUserBlogs={this.state.currentUserBlogs} handleLogout={this.handleLogout} />)} /> :
+            <div></div>
         }
+        
         <Route path="/login" render={() => (<LoginForm handleLogin={this.handleLogin} authErrorMessage={this.state.authErrorMessage} />)} />
 
         <Route path='/register' render={() => (<RegisterForm handleRegister={this.handleRegister} authErrorMessage={this.state.authErrorMessage} />)} />
-
+        
         <Route path="/full_blog/:id" render={(props) => (<FullBlog id={props.match.params.id} blogs={this.state.blogs} oneBlog={this.state.oneBlog} currentUserBlogs={this.state.currentUserBlogs} currentUser={this.state.currentUser} handleDelete={this.handleDelete} />)} />
 
         <Route path='/blogs/new' render={() => (<CreateBlog currentUser={this.state.currentUser} createBlog={this.createBlog} />)} />
 
-        <Route path="/user_blogs/:id" render={() => (<UserBlogs allUserBlogs={this.allUserBlogs} oneBlog={this.state.oneBlog} handleClick={this.handleClick} />)} />
+        <Route path="/user_blogs/:id" render={(props) => (<UserBlogs allUserBlogs={this.allUserBlogs} id={props.match.params.id} />)} />
 
-        <Route path="/edit/:id" render={(props) => (<EditBlog id={props.match.params.id} handleChange={this.handleChange} handleEdit={this.handleEdit} />)} />
+        <Route path="/edit/:id" render={(props) => (<EditBlog id={props.match.params.id} handleChange={this.handleChange} handleEdit={this.handleEdit} currentUser={this.state.currentUser} />)} />
 
         <Route path="/update_profile/:id" render={(props) => (<UpdateUser id={props.match.params.id} currentUser={this.state.currentUser} handleEditUser={this.handleEditUser} />)} />
         

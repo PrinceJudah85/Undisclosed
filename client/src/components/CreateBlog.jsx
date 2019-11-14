@@ -24,47 +24,51 @@ export default class CreateBlog extends React.Component {
   render() {
     return (
       <div className='create-blog'>
-        <form onSubmit={(event) => {
+        <h2 id="create-form-title">Create Blog</h2>
+        <form id='create-form' onSubmit={(event) => {
           event.preventDefault();
           this.props.createBlog(this.props.currentUser.id, this.state.blogData)
         }}>
-          <label htmlFor="title">Title</label>
-          <input
+          <label className='create-label' htmlFor="title">Title</label>
+          <input className='create-field'
             type="text"
             name="title"
             id="title"
+            placeholder="Title"
             value={this.state.title}
             onChange={this.handleChange}
           />
-          <br />
-          <label htmlFor="image_url">Image URL</label>
-          <input
+          <label className='create-label' htmlFor="image_url">Image URL</label>
+          <input className='create-field'
             type="text"
             name="image_url"
             id="image_url"
+            placeholder="Image URL"
             value={this.state.image_url}
             onChange={this.handleChange}
           />
-          <br />
-          <label htmlFor="content">Content</label>
-          <textarea
-            type="text"
-            name="content"
-            id="content"
-            value={this.state.content}
-            onChange={this.handleChange}
-          />
-          <br />
-          <label htmlFor="location">Location</label>
-          <input
+          <label className='create-label' htmlFor="location">Location</label>
+          <input className='create-field'
             type="text"
             name="location"
             id="location"
+            placeholder="Location"
             value={this.state.location}
             onChange={this.handleChange}
           />
+          <label className='create-label' htmlFor="content">Content</label>
+          <textarea
+            // type="text"
+            name="content"
+            id="content"
+            placeholder="Content"
+            row="12"
+            resize="true"
+            value={this.state.content}
+            onChange={this.handleChange} // Can you use "controlFunc" property for this?
+          />
           <br />
-          <button>Submit Blog</button>
+          <button id='create-blog-button'>Submit Blog</button>
         </form>
       </div>
     )
