@@ -12,19 +12,19 @@ export default class CreateComments extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="comment-box">
         <form className="comment-form" onSubmit={(event) => {
           event.preventDefault()
           this.props.createComment(this.props.blog_id, this.state)
         }}>
-          <label htmlFor="comment">Username</label>
+          <label id='comment-label' htmlFor="comment">Username</label>
           <textarea
             name="comment"
-            id="comment"
+            id="comment-field"
             value={this.state.comment}
             onChange={this.handleChange}
           />
-          <button>Submit</button>
+          <button id='comment-button'>Submit</button>
         </form>
       </div>
     )

@@ -1,11 +1,18 @@
+*:focus {
+  outline: none;
+}
+
 body {
   margin: 0;
 }
 
-/* ====================== [Welcome Page] ======================= */
+button {
+  cursor: url(https://res.cloudinary.com/v3rymatt/image/upload/c_fill,h_32,q_100,r_30,w_32,x_113,y_85/v1573684694/untitled_ir33dm.png), pointer;
+}
 
+/* =============== Welcome Page ===================== */
 .welcome-main {
-  background-color: #201F20;
+  background-color: #ffffff;
   margin: 0 auto;
 }
 
@@ -51,49 +58,40 @@ body {
   padding:.5em;
   border: 4px solid white;
   animation-name: login;
+  margin-right: 2em;
+  padding: 1em;
+}
+
+.login button {
+  box-shadow: 0 4px 20px 4px #6a9eb0;
+	background: linear-gradient(to bottom, #a1a6fc 5%, #e3c7e3 100%);
+	background-color: #a1a6fc;
+	border-radius: 16px;
+	border: 2px solid #d6bcd6;
+	display: inline-block;
+	color: #3094b8;
+	font-family: Arial;
+	font-size: 26px;
+	font-weight: bold;
+	padding: 16px 20px;
+	text-decoration: none;
+  text-shadow: 1px 2px 6px #d8dae6;
+  /* cursor: url(https://res.cloudinary.com/v3rymatt/image/upload/c_fill,h_32,q_100,r_30,w_32,x_113,y_85/v1573684694/untitled_ir33dm.png), pointer; */
+  animation-name: reveal;
   animation-duration: 1.6s;
   animation-timing-function: ease-in;
-  animation-delay: 1.5s;
   animation-direction: normal;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  opacity: 0;
 }
 
-@keyframes login {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: .1;
-  }
-  20% {
-    opacity: .2;
-  }
-  30% {
-    opacity: .3;
-  }
-  40% {
-    opacity: .4;
-  }
-  50% {
-    opacity: .5;
-  }
-  60% {
-    opacity: .6;
-  }
-  70% {
-    opacity: .7;
-  }
-  80% {
-    opacity: .8;
-  }
-  90% {
-    opacity: .9;
-  }
-  100% {
-    opacity: 1;
-  }
+.login button:hover {
+	background: linear-gradient(to bottom, #e3c7e3 5%, #a1a6fc 100%);
+}
+
+.login button:active {
+	position: relative;
+  top: 10px;
 }
 
 .welcome-title {
@@ -110,7 +108,7 @@ body {
   margin-left: 5%;
   margin-right: 5%;
   border-bottom: 1em solid #201f20;
-  animation-name: pulse;
+  animation-name: reveal;
   animation-duration: 1.6s;
   animation-timing-function: ease-in;
   animation-delay: .5s;
@@ -119,42 +117,6 @@ body {
   animation-fill-mode: forwards;
   animation-play-state: running;
   opacity: 0;
-}
-
-@keyframes pulse {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: .1;
-  }
-  20% {
-    opacity: .2;
-  }
-  30% {
-    opacity: .3;
-  }
-  40% {
-    opacity: .4;
-  }
-  50% {
-    opacity: .5;
-  }
-  60% {
-    opacity: .6;
-  }
-  70% {
-    opacity: .7;
-  }
-  80% {
-    opacity: .8;
-  }
-  90% {
-    opacity: .9;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .title-font {
@@ -241,7 +203,7 @@ body {
   text-align: center;
 }
 
-.blogs button{
+.blogs button {
   font-size: 1em;
   font-weight: bold;
   background: whitesmoke;
@@ -260,9 +222,26 @@ body {
   padding: 10px
 }
 
+#user-image {
+  height: 200px;
+  width: 200px;
+  background-color: darksalmon;
+  padding: 5px;
+}
+
+#user-image p {
+  margin: 0px auto;
+  padding-bottom: 12px;
+}
+
+#user-image h3 {
+  margin: 0px auto;
+}
+
 .blogs img {
   max-width: 90%;
   border-radius: 60px;
+  box-shadow: 4px 4px;
 }
 
 /* .blogs h4 {
@@ -304,86 +283,95 @@ body {
   transition: background-color 250ms linear;
   }
 
-  .main-side-top button:hover {
-    background: black;
-    color: whitesmoke;
-  }
+.main-side-top button:hover {
+  background: black;
+  color: whitesmoke;
+}
 
-  .sticky {
-    position: -webkit-sticky;
-    position: sticky;
-    top: -1px;
-    margin-bottom: 35px;
-    background-color: white;
-  }
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
+  margin-bottom: 35px;
+  background-color: white;
+}
 
-  .black {
-    background-color: #201E1F;
-    color: white;
-    margin: 0;
-    padding: 20px;
-  }
+.black {
+  background-color: #201E1F;
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
 
-  .main-side-top-buttons h1 {
-    margin: 0;
-    padding-top: 20px;
-    padding-bottom: 10px;
-  }
-  
-  .main-user-blogs {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    background-color: #201E1F;
-    color: white;
-  }
+.main-side-top-buttons h1 {
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
 
-  .main-user-blogs img {
-    justify-self: center;
-    margin: 10px 0;
-  }
+.main-user-blogs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #201E1F;
+  color: white;
+}
 
-  .main-user-blog-heading {
-    align-self: center;
-  }
+.main-user-blogs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #201E1F;
+  color: white;
+}
 
-  /* ======================= [Header / Footer] ======================== */
+.main-user-blogs img {
+  justify-self: center;
+  margin: 10px 0;
+}
 
-  .full-blog-div {
-    text-align: center;
-  }
+.main-user-blog-heading {
+  align-self: center;
+}
 
-  .full-blog-div img {
-    width: 50%;
-  }
+.full-blog-div {
+  text-align: center;
+}
 
-  /* ================= [Header / Footer] ==================== */
-  .header {
-    background-image: url(http://blkhack.com/wp-content/uploads/2016/11/tumblr_static_tumblr1.jpg);
-    background-size: contain;
-    background-repeat: initial;
-    font-size: 2em;
-    height: 15vh;
-    line-height: 7.5vh;
-    margin: 0;
-    border-bottom: 1.2px solid black;
-    padding: 0;
-    text-align: center;
-  }
+.full-blog-div img {
+  width: 50%;
+}
 
-  .header a {
-    text-decoration: none;
-    color: #201E1F;
-  }
+/* ================= Header / Footer ==================== */
+.header {
+  background-image: url('http://blkhack.com/wp-content/uploads/2016/11/tumblr_static_tumblr1.jpg');
+  background-size: contain;
+  background-repeat: initial;
+  font-size: 2em;
+  height: 15vh;
+  line-height: 7.5vh;
+  margin: 0;
+  border-bottom: 1.2px solid black;
+  padding: 0;
+  text-align: center;
+}
 
-  .footer {
-    width: 100%;
-    height: 10vh;
-    background-color: black;
-    color: whitesmoke;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.header a {
+  text-decoration: none;
+  color: #201E1F;
+}
+
+.footer {
+  width: 100%;
+  height: 10vh;
+  background-color: black;
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer img {
+  width: 50px;
+}
 
 /*============================ [Form CSS] ===============================*/
 /* [TBU] Update If Desired */
@@ -430,6 +418,10 @@ body {
   transition: background-color 1s, transform 1s ease-in-out;
 }
 
+#register-link a{
+  text-decoration:none;
+  color: #1F1E1E;
+}
 #submit:hover, #register-link:hover{
   background-color: rgb(216, 147, 147);
   cursor: pointer;
@@ -699,8 +691,76 @@ body {
 
 /*============================[Full Blog Page]=============================*/
 
-.full-blog {
+.full-blog-page {
   display:flex;
   flex-direction: column;
   justify-content:center;
+  margin:0 10% 0 10%;
 }
+
+.blog-title {
+  text-align:center;
+  font-size:2em;
+}
+
+.full-blog-page h3{
+  font-size:1.5em;
+}
+
+.full-blog-img {
+  margin: 0 auto;
+  width:80%;
+}
+
+/* Ken Burn's Effect
+Thanks to Kirupa Chinnathambi @ 
+(https://www.kirupa.com/html5/ken_burns_effect_css.htm)
+*/
+
+.full-blog-img img{
+  border:2px solid black;
+  box-shadow: 6px 6px;
+  width:100%;
+  animation: kenburns 20s infinite;
+}
+
+/* @keyframes kenburns {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    transform: scale3d(1.5, 1.5, 1.5) translate3d(30px, 25px, 0px);
+    animation-timing-function: ease-in;
+    opacity:1;
+  }
+  100% {
+    transform: scale3d(2, 2 ,2) translate3d(25px, 20px, 0px);
+    opacity: 0;
+  }
+} */
+
+.full-blog-page p{
+  font-size:1.3em;
+  line-height:1.8em;
+  margin-top:-.5em;
+  margin-left:8%;
+  margin-right:8%;
+  padding:1em;
+}
+
+.full-blog-page a{
+  text-decoration:none;
+  color:black;
+  border-bottom:1px solid black;
+}
+
+#comment-label {
+  display:none;
+}
+
+/* #comment {
+  width: 
+} */

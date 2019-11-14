@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 export default class RegisterForm extends React.Component {
   state = {
     username: '',
-    password: ''
+    password: '',
+    city: ''
   }
 
   canBeSubmitted() {
@@ -52,6 +53,14 @@ export default class RegisterForm extends React.Component {
           id="password"
           type="password"
           value={this.state.password}
+          onChange={this.handleChange}
+        />
+        <label htmlFor="city">City</label>
+        <input
+          name="city"
+          id="city"
+          type="text"
+          value={this.state.city}
           onChange={this.handleChange}
         />
         <button disabled={!isEnabled}>Submit</button>
