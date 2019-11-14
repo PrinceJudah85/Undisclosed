@@ -73,7 +73,8 @@ userRouter.put('/:id', async (req, res, next) => {
 })
 
 userRouter.get('/verify', restrict, async (req, res, next) => {
-  const user = await User.findByPk(res.locals.user.id) //res.locals.user; old code ready to work
+  console.log("hello")
+  const user = await User.findByPk(res.locals.user.id);
   res.json(user);
 })
 
