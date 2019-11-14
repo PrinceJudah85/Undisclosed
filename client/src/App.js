@@ -32,8 +32,7 @@ class App extends React.Component {
       this.setState({
         authErrorMessage: currentUser.error
       })
-    }
-    else {
+    } else {
       this.setState({ currentUser })
       this.props.history.push('/blogs')
     }
@@ -46,9 +45,7 @@ class App extends React.Component {
         authErrorMessage: currentUser.error
       })
     } else {
-      this.setState({
-        currentUser
-      })
+      this.setState({ currentUser })
       this.props.history.push('/blogs')
     }
   }
@@ -122,7 +119,7 @@ class App extends React.Component {
 
   handleEditUser = async (id, formData) => {
     const newUser = await putUser(id, formData);
-    this.setState(prevState => ({
+    this.setState( prevState => ({
       currentUser: (prevState.currentUser.id === newUser.id ? newUser : this.state.currentUser)
     }))
     this.props.history.push('/blogs')

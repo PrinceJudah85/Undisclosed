@@ -15,7 +15,7 @@ const main = async () => {
   const admin = await User.create({
     username: "Admin",
     password_digest: "$2b$11$CGQv6rq8pcsZRNO2BMt15.MkfYP2IVk0IWpXn7OLwYjVkCwN6EEJy",
-    image_url: "https://i.imgur.com/HZPz2tu.png",
+    image_url: "https://i.imgur.com/U1yqxBa.png",
     city: "New York City"
   })
 
