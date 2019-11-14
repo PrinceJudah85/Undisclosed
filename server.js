@@ -3,6 +3,7 @@ const logger = require('morgan');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
+const { User } = require('./models.js')
 
 const userRouter = require('./routes/userRouter.js')
 const commentRouter = require('./routes/commentRouter.js')
@@ -20,14 +21,6 @@ app.use('/blogs', blogRouter);
 app.use('/users/:user_id/blogs', userBlogRouter);
 app.use('/blogs/:blog_id/comments', commentRouter);
 
-
-// app.get('/', (req, res) => {
-//   res.json({ message: 'It is working' })
-// })
-
-// app.get('/ping', (req, res) => {
-//   res.json({ ping: 'pong' })
-// })
 
 
 
