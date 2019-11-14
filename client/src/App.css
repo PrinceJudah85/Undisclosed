@@ -72,7 +72,7 @@ h2 {
   margin: 100px auto 20px auto;
   border: 1px solid black;
   border-radius: 120px;
-  transition: transform 2s ease-in-out;
+  transition: transform 4s ease-in-out;
   width: 40%;
 }
 
@@ -491,10 +491,6 @@ h2 {
   color: black;
 }
 
-.login-form input:not:hover {
-  color: white;
-}
-
 .login-form input::placeholder {
   color: white;
   transition: color 1.2s;
@@ -504,13 +500,13 @@ h2 {
   font-family:'Literata', monospace;
   font-weight: 600;
   width: 200px;
-  margin: 3vh auto;
+  margin: 0 auto;
   font-size: 1.9em;
   line-height: 40px;
   border: 1px solid black;
   border-radius: 5px;
   background-color: white;
-  transition: background-color 1s;
+  transition: background-color 1s, width 1s, line-height 1s;
 }
 
 #register-link {
@@ -531,17 +527,15 @@ h2 {
   color: #1F1E1E;
 }
 
-#register-link a:hover {
-  color: white;
-}
-
 #submit:hover, #register-link:hover{
   background-color: black;
   border: 1px solid white;
   color: white;
-  animation: shake 0.5s;
+  width: 225px;
+  line-height: 50px;
+  /* animation: shake 0.5s;
   transform: translate3d(0, 0, 0);
-  perspective: 100px;
+  perspective: 100px; */
 } 
 
 /* This animation used for RegisterForm too */
@@ -570,12 +564,18 @@ h2 {
   font-weight:600;
   font-size: 1.2em;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 5vh;
   line-height: 50px;
   border-radius: 10px;
-  background-color: #CEC6C1;
+  background-color: black;
   border: none;
-  transition: background-color 1s;
+  transition: background-color 1.2s;
+  color: black;
+}
+
+.register-form input::placeholder {
+  color: white;
+  transition: color 1.2s;
 }
 
 .register-form button {
@@ -585,18 +585,18 @@ h2 {
   font-size: 1.7em;
   font-weight: 600;
   line-height: 40px;
-  border: 1px solid purple;
+  border: 1px solid black;
   border-radius: 5px;
-  background-color: #CEC6C1;
-  transition: background-color 1s, transform 1s ease-in-out;
+  background-color: white;
+  transition: background-color 1s, width 1s, line-height 1s;
 }
 
 .register-form button:hover {
-  background-color: rgb(214, 174, 174);
-  cursor: pointer;
-  animation: shake 0.8s;
-  transform: translate3d(0, 0, 0);
-  perspective: 100px;
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  width: 225px;
+  line-height: 50px;
 }
 
 .register-form h2{
