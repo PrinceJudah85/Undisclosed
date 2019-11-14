@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Route, withRouter } from 'react-router-dom';
-import { registerUser, loginUser, verifyUser, getAllBlogs, getAllUserBlogs, getOneBlog, postBlog, deleteBlog, putBlog, putUser } from './services/api-helper';
+import { registerUser, loginUser, verifyUser, getAllBlogs, getAllUserBlogs, postBlog, deleteBlog, putBlog, putUser } from './services/api-helper';
 import Welcome from './components/Welcome';
 import Header from './components/Header';
 import RegisterForm from './components/RegisterForm';
@@ -32,8 +32,7 @@ class App extends React.Component {
       this.setState({
         authErrorMessage: currentUser.error
       })
-    }
-    else {
+    } else {
       this.setState({ currentUser })
       this.props.history.push('/blogs')
     }
@@ -46,9 +45,7 @@ class App extends React.Component {
         authErrorMessage: currentUser.error
       })
     } else {
-      this.setState({
-        currentUser
-      })
+      this.setState({ currentUser })
       this.props.history.push('/blogs')
     }
   }
@@ -103,7 +100,7 @@ class App extends React.Component {
 
   handleDelete = async (e) => {
     const id = e.target.id
-    const blog = await deleteBlog(id)
+    await deleteBlog(id)
     this.setState(prevState => ({
       blogs: [...prevState.blogs.filter(blog => { return blog.id !== parseInt(id) })],
       currentUserBlogs: [...prevState.currentUserBlogs.filter(currentBlog => { return currentBlog.id !== parseInt(id) })]
