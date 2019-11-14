@@ -22,7 +22,7 @@ const main = async () => {
   const blog1 = await Blog.create({
     title: "Bushwick Collective",
     image_url: "https://i2.wp.com/madhattersnyc.com/wp-content/uploads/2019/06/Urban-Ruben-Bushwick-Collective-2019-mural-1.jpeg?fit=660%2C496&ssl=1",
-    content: "Ruben Ubiera, who uses the tag @urbanruben on his murals, was born in the Dominican Republic. He credits his move to the Bronx at the age of fifteen with exposing him to the world of graffiti. It’s been an influence on his work ever since, whether he’s working on murals or mixed-media pieces. Last year’s pitbull piece was one of the season’s biggest hits, but this year Ubiera took on a much beloved subject already well represented in Bushwick: Biggie Smalls. But this version, called Deconstructed Biggie, is unlike any other. With surgical precision, Ubiera sliced the rapper into little pieces. Using a black & white palette with yellow accents, Ubiera took a classic image and created something completely fresh.",
+    content: "Ruben Ubiera, who uses the tag @urbanruben on his murals, was born in the Dominican Republic. He credits his move to the Bronx at the age of fifteen with exposing him to the world of graffiti. It’s been an influence on his work ever since, whether he’s working on murals or mixed-media pieces. Last year’s pitbull piece was one of the season’s biggest hits, but this year Ubiera took on a much beloved subject already well represented in Bushwick: Biggie Smalls.",
     location: "NYC"
   })
 

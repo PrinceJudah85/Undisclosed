@@ -24,6 +24,7 @@ export default class LoginForm extends Component {
         <h2>Login</h2>
         <label htmlFor="username">Username</label>
         <input
+          placeholder="username"
           name="username"
           id="username"
           type="text"
@@ -32,6 +33,7 @@ export default class LoginForm extends Component {
         />
         <label htmlFor="password">Password</label>
         <input
+          placeholder="password"
           name="password"
           id="password"
           type="password"

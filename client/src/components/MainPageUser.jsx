@@ -7,13 +7,15 @@ export default function MainPageUser(props) {
     <div className="main-side">
       <div className="main-side-top">
         <div className="main-side-top-buttons">
-          <h1>Hello, {props.currentUser.username}</h1>
+          <h1>{props.currentUser.username}</h1>
           <div id="user-image">
             {props.currentUser.image_url === null ? <img src='https://i.imgur.com/HZPz2tu.png' alt="default user image" /> : <img src={props.currentUser.image_url} />}
-            <Link to={`/update_profile/${props.currentUser.id}`}><p>edit profile</p></Link>
-            <h3>{props.currentUser.city}</h3>
           </div>
-          <button onClick={props.handleLogout}>Logout</button>
+          <h3>Representing {props.currentUser.city}</h3>
+            <Link to={`/update_profile/${props.currentUser.id}`}>
+              <button className="small-button">Edit Profile</button>
+            </Link>
+          <button onClick={props.handleLogout} className="small-button">Logout</button>
           <button>Following</button>
           <button>Favorites</button>
         </div>
