@@ -20,10 +20,11 @@ export default class CreateComments extends React.Component {
           <label id='comment-label' htmlFor="comment">Username</label>
           <textarea
             name="comment"
-            id="comment-field"
+            id="comment"
+            placeholder="Comments..."
             value={this.state.comment}
             onChange={this.handleChange}
-          />
+          ></textarea>
           <button id='comment-button'>Submit</button>
         </form>
       </div>

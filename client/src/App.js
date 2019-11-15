@@ -68,11 +68,17 @@ class App extends React.Component {
 
   readAllBlogs = async () => {
     const blogs = await getAllBlogs();
+    blogs.sort(function (a, b) {
+      return new Date(b.createdAt) - new Date(a.createdAt)
+    })
     this.setState({ blogs })
   }
 
   allUserBlogs = async (id) => {
     const userBlogs = await getAllUserBlogs(id)
+    userBlogs.sort(function (a, b) {
+      return new Date(b.createdAt) - new Date(a.createdAt)
+    })
     this.setState({
       currentUserBlogs: userBlogs
     })
@@ -84,8 +90,8 @@ class App extends React.Component {
     const response = await postBlog(user_id, blogData);
     const newBlog = response
     this.setState(prevState => ({
-      blogs: [...prevState.blogs, newBlog],
-      currentUserBlogs: [...prevState.currentUserBlogs, newBlog]
+      blogs: [newBlog, ...prevState.blogs],
+      currentUserBlogs: [newBlog, ...prevState.currentUserBlogs]
     }))
     this.props.history.push('/blogs')
   }
@@ -119,7 +125,7 @@ class App extends React.Component {
 
   handleEditUser = async (id, formData) => {
     const newUser = await putUser(id, formData);
-    this.setState( prevState => ({
+    this.setState(prevState => ({
       currentUser: (prevState.currentUser.id === newUser.id ? newUser : this.state.currentUser)
     }))
     this.props.history.push('/blogs')

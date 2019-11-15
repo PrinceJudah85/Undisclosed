@@ -2,15 +2,15 @@ import React from 'react';
 
 export default function CommentList(props) {
   return (
-    <div>
-      {props.comments && 
-        props.comments.blog.id === props.blog_id ?
-          props.comments.map(comment => (
-            <div>
+    <div className="comment-parent">
+      {props.comments &&
+        props.comments.map(comment => (
+          comment.blogId === props.blog_id && (
+            <div className="comment-wrapper">
               <p>{comment.content}</p>
-              <button onClick={() => props.destroyComment(comment.blog.id, comment.id)}></button>
+              <button className="comment-delete" onClick={() => props.destroyComment(comment.id)}>Delete Comment</button>
             </div>
-          )) : null
+          )))
       }
     </div>
   )

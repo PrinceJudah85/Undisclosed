@@ -90,8 +90,8 @@ export const getAllComments = async (blog_id) => {
   return response.data;
 }
 
-export const postComment = async (blog_id, commentData) => {
-  const response = await api.post(`/blogs/${blog_id}/comments`, commentData);
+export const postComment = async (blog_id, fuck) => {
+  const response = await api.post(`/blogs/${blog_id}/comments`, fuck);
   return response.data;
 }
 
