@@ -418,6 +418,54 @@ h2 {
   width: 50%;
 }
 
+.full-blog-user-buttons {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.user-blogs {
+  display: grid;
+  grid-template-columns: 40% 50%;
+  margin-top: 15px;
+}
+
+.user-blog-image-container {
+  text-align: center;
+  padding: 10px;
+}
+
+.user-blog-image-container img {
+  max-width: 90%;
+  border-radius: 60px;
+  box-shadow: 4px 4px;
+}
+
+.user-blog-content-container h2 {
+  font-family: 'Literata', monospace;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.user-blog-content-container p {
+  font-family: 'Literata', monospace;
+  font-size: 1em;
+}
+
+.user-blog-content-container button {
+  font-size: 1em;
+  font-weight: 600;
+  background: whitesmoke;
+  border: 2px solid black;
+  border-radius: 10px;
+  transition: background-color 250ms linear;
+  font-family: 'Literata', Arial;
+}
+
+.user-blog-content-container button:hover {
+  background: black;
+  color: whitesmoke;
+}
+
 /* ================= Header / Footer ==================== */
 .header {
   background-image: url('http://blkhack.com/wp-content/uploads/2016/11/tumblr_static_tumblr1.jpg');
@@ -466,7 +514,6 @@ h2 {
 }
 
 /*============================ [Form CSS] ===============================*/
-/* [TBU] Update If Desired */
 
 /* Login part */
 
@@ -500,7 +547,7 @@ h2 {
   font-family:'Literata', monospace;
   font-weight: 600;
   width: 200px;
-  margin: 0 auto;
+  margin: 2vh auto;
   font-size: 1.9em;
   line-height: 40px;
   border: 1px solid black;
@@ -513,7 +560,7 @@ h2 {
   font-family:'Literata', Arial;
   font-weight: 600;
   width: 200px;
-  margin: 0 auto;
+  margin: 2vh auto;
   font-size: 1.9em;
   line-height: 40px;
   border: 1px solid black;
@@ -678,6 +725,7 @@ h2 {
   background-color: black;
   opacity: .7;
   outline: none;
+  width: 100%;
 }
 
 #content:hover{
@@ -806,31 +854,36 @@ h2 {
 /*============================[Full Blog Page]=============================*/
 
 .full-blog-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 10% 0 10%;
+  margin-bottom: 25px;
 }
 
 .full-blog-page h3 {
   font-size: 1.5em;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .full-blog-page p {
   font-size: 1.3em;
   line-height: 1.8em;
-  margin-top: -.5em;
-  margin-left: 8%;
-  margin-right: 8%;
   padding: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.full-blog-page a {
+  text-decoration: none;
+  color: black;
 }
 
 .full-blog-page button {
-  margin: 5px 10px;
+  margin: 5px 10px 5px 1em;
   font-size: 1em;
   font-weight: bold;
-  width: 30%;
-  height: 35px;
+  width: 10%;
+  height: 40px;
   background: whitesmoke;
   border: 2px solid black;
   border-radius: 10px;
@@ -843,16 +896,16 @@ h2 {
 }
 
 .blog-title {
-  font-size:'Arvo', Arial;
-  font-weight:700;
-  font-style:italic;
+  font-family: 'Arvo', Arial;
+  font-weight: 700;
+  font-style: italic;
   text-align: center;
   font-size: 2em;
 }
 
 .full-blog-img {
   margin: 0 auto;
-  width: 80%;
+  width: 70%;
 }
 
 .full-blog-img img{
@@ -885,35 +938,63 @@ Thanks to Kirupa Chinnathambi @
   }
 } */
 
-/* #comment {
-  width: 
-} */
+textarea {
+  width: 45%;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+  line-height: 1.8em;
+  font-family: 'Literata', monospace;
+}
+
+.comment-parent {
+  margin-left: 15%;
+}
+
+.comment-form {
+  text-align: center;
+}
+
+.comment-wrapper {
+  width: 80%;
+  background-color: lightgray;
+  border-radius: 20px;
+}
+
+.comment-wrapper p {
+  margin-left: 0;
+}
+
+.comment-delete {
+  margin-bottom: 15px !important;
+}
 
 /*=========================[Update User Form]===========================*/
 
 .update-form {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  padding-top:8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8%;
 }
 
 .update-form input{
-  font-family:'Literata', Arial;
-  font-weight:600;
+  font-family: 'Literata', Arial;
+  font-weight: 600;
   font-size: 1.2em;
   text-align: center;
   margin-bottom: 15px;
   line-height: 50px;
   border-radius: 10px;
-  background-color: #CEC6C1;
+  background-color: lightgray;
   border: none;
-  transition: background-color 1s;
-  width:30%;
+  width: 30%;
 }
 
 .update-form button{
-  font-family:'Literata', Arial;
+  font-family: 'Literata', Arial;
   font-weight: 600;
   margin: 5px 10px;
   font-size: 1em;

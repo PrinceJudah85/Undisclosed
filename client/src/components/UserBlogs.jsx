@@ -27,9 +27,9 @@ export default class UserBlogs extends React.Component {
               <div className="user-blog-image-container">
                 <img src={blog.image_url} alt="blog-post" />
               </div>
-              <div>
+              <div className="user-blog-content-container">
                 <h2>Author: {blog.user.username}</h2>
-                <h4>{blog.content}</h4>
+                <p>{blog.content}</p>
                 <Link to={`/full_blog/${blog.id}`}>
                   <button>...read more!</button>
                 </Link>

@@ -1,7 +1,7 @@
 // inside models.js
 const { Sequelize } = require('sequelize');
 
-// Create a variable that is a connection to the database.
+// Creates a variable that connects to the database.
 const sequelize = new Sequelize({
   database: 'undisclosed_db',
   dialect: 'postgres',
