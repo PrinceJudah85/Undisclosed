@@ -726,6 +726,7 @@ h2 {
   opacity: .7;
   outline: none;
   width: 100%;
+  color:white;
 }
 
 #content:hover{
@@ -733,6 +734,7 @@ h2 {
   opacity: .9;
   transition: opacity, background-color .7s;
   border: 2px solid black;
+  color:black;
 }
 
 #content::placeholder{
