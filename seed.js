@@ -19,6 +19,13 @@ const main = async () => {
     city: "New York City"
   })
 
+  const princejudah = await User.create({
+    username: "PrinceJudah",
+    password_digest: "$2b$11$LAVXEbn9yWmJkYy91ecpxev8N577JSPNnAPDS1pJmzK3S.HQraaku",
+    image_url: "https://i.imgur.com/U1yqxBa.png",
+    city: "New York City"
+  })
+
   const blog1 = await Blog.create({
     title: "Bushwick Collective",
     image_url: "https://i2.wp.com/madhattersnyc.com/wp-content/uploads/2019/06/Urban-Ruben-Bushwick-Collective-2019-mural-1.jpeg?fit=660%2C496&ssl=1",
@@ -38,6 +45,20 @@ const main = async () => {
     image_url: "https://static01.nyt.com/images/2008/10/07/dining/apothke_650.1.jpg",
     content: "Inspired by the history and rise of the apothecary in Europe as well as the artistic influence of absinthe dens in 19th century Paris, Apotheke is the first of its kind. The entire experience from wandering down a hidden street to find the entrance, to tasting the first sip of a specialty cocktail made with exotic herbs and fruits – is a privilege.",
     location: "NYC"
+  })
+
+  const blog4 = await Blog.create({
+    title: "West 4th 'The Cage' Basketball Courts",
+    image_url: "https://i.pinimg.com/originals/53/f5/e0/53f5e0d24acac4f91fc7a68262fe6fde.jpg",
+    content: 'Also dubbed "The Cage" this nyc public park located on west 4th in Greenwich Village attracts the best local basketball talent NYC has to offer. Get ready to wait a good while before you get next.',
+    location: "West 4th Street in Greenwich Village, NY"
+  })
+
+  const blog5 = await Blog.create({
+    title: "Harlem's Rucker Park",
+    image_url: "https://untappedcities-wpengine.netdna-ssl.com/wp-content/uploads/2019/07/Dyckman-Streetball-Harlem-NewYork-Untapped-Cities-Zach-Fleischer1-2.jpg",
+    content: 'If "The Cage" on West 4th is known for attracting the best local talent, then Rucker Park is known for attracting the best nationwide talent.  Current and former pro basketball players like: Kobe Bryant, Vince Carter, Allen Iverson, and Kevin Durant have all played scrimmage games in this legendary park.  They tend to attract a big crowd during the Summer. So the next time you are in Harlem near 155th street, stop by and see if you can hold your own against the very best.',
+    location: "155th Street in Harlem, NYC"
   })
 
   // set associations here
