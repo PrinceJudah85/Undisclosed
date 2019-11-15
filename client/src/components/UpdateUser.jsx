@@ -3,7 +3,8 @@ import React from 'react';
 export default class UpdateUser extends React.Component {
   state = {
     userData: {
-      image_url: ''
+      image_url: '',
+      city: ''
     }
   }
 
@@ -34,15 +35,16 @@ export default class UpdateUser extends React.Component {
             onChange={this.handleChange}
           />
           <br />
-          {/* <label htmlFor="city">City</label>
+          <label htmlFor="city">City</label>
           <input
             type="text"
             name="city"
             id="city"
+            placeholder="Insert City Name"
             value={this.state.city}
             onChange={this.handleChange}
           />
-          <br /> */}
+          <br />
           <button>Update</button>
         </form>
       </div>
