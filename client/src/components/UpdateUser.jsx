@@ -3,7 +3,8 @@ import React from 'react';
 export default class UpdateUser extends React.Component {
   state = {
     userData: {
-      image_url: ''
+      image_url: '',
+      city: ''
     }
   }
 
@@ -19,8 +20,8 @@ export default class UpdateUser extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={(event) => {
+      <div className='update-user'>
+        <form className='update-form' onSubmit={(event) => {
           event.preventDefault();
           this.props.handleEditUser(this.props.id, this.state.userData)
         }}>
@@ -29,19 +30,21 @@ export default class UpdateUser extends React.Component {
             type="text"
             name="image_url"
             id="image"
+            placeholder="Insert Image URL"
             value={this.state.image_url}
             onChange={this.handleChange}
           />
           <br />
-          {/* <label htmlFor="city">City</label>
+          <label htmlFor="city">City</label>
           <input
             type="text"
             name="city"
             id="city"
+            placeholder="Insert City Name"
             value={this.state.city}
             onChange={this.handleChange}
           />
-          <br /> */}
+          <br />
           <button>Update</button>
         </form>
       </div>

@@ -1,6 +1,6 @@
 # Project Undisclosed
 
-![Team Logo](https://i.imgur.com/rj6bNES.png)
+![Team Logo](https://ga-students.slack.com/files/UMXQLMKEG/FQ7AKSC11/rafael_cat.png)
 
 ## LoS FoUr AmIgOs 
 * Nehemias C.
