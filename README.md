@@ -1,11 +1,11 @@
 # Project Undisclosed
 
-![Team Logo](https://ga-students.slack.com/files/UMXQLMKEG/FQ7AKSC11/rafael_cat.png)
+![Team Logo](https://i.imgur.com/c4Ybn2y.png)
 
 ## LoS FoUr AmIgOs 
 * Nehemias C.
 * Matthew C.
-* Rafael C. - El Embajador de la nacion de Git (aka Git Daddy)
+* Rafael C. - Git President
 * Raul J.
 
 ## Project Description
